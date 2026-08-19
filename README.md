@@ -18,9 +18,9 @@
 
 > [NOTE]
 > **提示：** 本项目依赖`sumneko`的`LuaLS`，必须先安装`LuaLS`，才能使用该插件,不支持`EmmyLua`插件
-<br />
-> [System]
-> 仅支持`Windows 10（x64）、Windows 11`系统，`MacOS\Linux`不要安装该插件！！！
+
+> [!IMPORTANT]
+> **系统限制：** 仅支持 `Windows 10（x64）`、`Windows 11` 系统，`MacOS/Linux` 不要安装该插件！！！
 
 ---
 
