@@ -1,0 +1,32 @@
+---@meta
+
+--- Runtime service/container node types that are present in the engine but do
+--- not expose additional members in the current SDK dump.
+---@class ConfigService : SandboxNode
+---@class LuaProfileService : SandboxNode
+---@class ScriptServiceHost : SandboxNode
+---@class AssetServiceHost : SandboxNode
+---@class SandboxDebugHelper : SandboxNode
+---@class MainStorage : SandboxNode
+---@class InitStorage : SandboxNode
+---@class ScriptContext : SandboxNode
+---@class SandboxHttpService : SandboxNode
+---@class LocalFirst : SandboxNode
+---@class CloudAnnouncementService : SandboxNode
+---@class SandBoxPlayersRemoteService : SandboxNode
+---@class Setting : SandboxNode
+---@class FriendInviteRemoteService : SandboxNode
+---@class MeshCacheMananger : SandboxNode
+---@class UIManageService : SandboxNode
+---@class DebuggerLogRemoteService : SandboxNode
+---@class DebuggerLogService : SandboxNode
+---@class CustomConfigService : SandboxNode
+---@class AIService : SandboxNode
+---@class SelecterService : SandboxNode
+---@class ReplicatorRoot : SandboxNode
+---@class BlockService : SandboxNode
+---@class NavigationService : SandboxNode
+---@class Navigation2DService : SandboxNode
+---@class PluginsService : SandboxNode
+---@class LegacyActorRoot : SandboxNode
+---@class CombineManeger : SandboxNode

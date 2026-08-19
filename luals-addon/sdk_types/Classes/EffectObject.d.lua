@@ -1,0 +1,468 @@
+---@meta
+
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@class EffectObject : SandboxNode
+---@field AssetID string @特效资源id
+---@field Duration number @特效持续时间
+---@field Looping boolean @特效是否循环
+---@field Material string @特效材质
+---@field Rate number @特效进度
+---@field TexturePath string @纹理路径
+---@field TrailsMode EmitterTrailsMode @轨迹模式
+---@field TrailsTextureMode EmitterTrailsTextureMode @轨迹纹理模式
+---@field SizeAffectsWidth boolean @尺寸影响宽度
+---@field InheritParticleColor boolean @继承粒子颜色
+---@field ColorOverTrails ColorQuad @彩色覆盖轨迹
+---@field TrailsTexturePath string @轨迹纹理路径
+---@field SimulationSpeed number @播放速度
+---@field AutoDestory boolean @自动销毁
+---@field ColorOverLifeTimeMode EmitterColorOverLifeTimeMode @颜色随生命周期内变化模式
+---@field ColorOverLifeTimeMinColor ColorQuad @颜色随生命周期内变化的最小颜色值
+---@field ColorOverLifeTimeMaxColor ColorQuad @颜色随生命周期内变化的最大颜色值
+---@field Prewarm boolean @预热
+---@field SimulationSpace ParticleSystemSimulationSpace @移动坐标系
+---@field DeltaTime boolean @单位时间
+---@field ScalingMode ParticleSystemScalingMode @缩放模式
+---@field PlayOnAwake boolean @创建时启动
+---@field MaxParticles number @最大粒子数量
+---@field AutoRandomSeed boolean @自动随机种子
+---@field RandomSeed number @随机种子
+---@field CullingMode ParticleSystemCullingMode @裁剪模式
+---@field RingBufferMode ParticleSystemRingBufferMode @粒子循环利用方式
+---@field LoopRange Vector2 @粒子循环生命区间
+---@field StartColorGradient ParticleEmitterColorGradient @粒子颜色
+---@field TrailMaterial string @轨迹材质路径
+---@field Brust ParticleEmissionBurst @（爆发），产生粒子爆发的效果，通过Time（时间）、Count（数量）、Cycles（周期）、Interval（间隔）四个参数调整。
+---@field EnableSizeOverLifeTime boolean @开启定义粒子尺寸在其寿命期间如何变化的曲线
+---@field OverLifeTimeSize Vector3 @定义粒子尺寸在其寿命期间如何变化的曲线
+---@field EnableRotationOverLifeTime boolean @开启根据生命周期的旋转模块
+---@field EnableUV boolean @开启uv模块
+---@field UVMode ParticleSystemUVMode @uv模式
+---@field Tiles Vector2 @纹理在 X（水平）和 Y（垂直）方向上划分的区块数量。
+---@field Animation ParticleSystemUVGridType @动画模式
+---@field RowMode ParticleSystemUVRowMode @动画模式
+---@field CustomRow number @从精灵图集选择特定行以生成动画
+---@field TimeMode ParticleSystemUVTimeMode @动画模式
+---@field SpeedRange Vector2 @速度范围
+---@field FPS number @根据指定的每秒帧数值对帧进行采样
+---@field Cycles number @动画序列在粒子生命周期内重复的次数。
+---@field EnableVelocityOverLifetime boolean @是否开启
+---@field VelocityOverLifeTimeSpace ParticleVelocityOverLifetimeSpaceMode @选择X、Y和Z轴是否指向本地或世界空间。
+---@field EnableLimitVelocityOverLifetime boolean @是否开启
+---@field EnableSeparateAxes ParticleLimitVelocityOverLifetimeSeparateAxes @将轴拆分为单独的 X、Y 和 Z 分量。
+---@field LimitVelocityOverLifeTimeSpace ParticleLimitVelocityOverLifetimeSpaceMode @选择速度限制是适用局部空间还是世界空间。仅当启用了 Separate Axes 时，此选项才可用。
+---@field LimitVelocityOverLifeTimeDampen number @当粒子速度超过速度限制时，粒子速度降低的比例。
+---@field MultiplyBySize boolean @启用此属性后，较大的粒子会更大程度上受到阻力系数的影响。
+---@field MultiplyByVelocity boolean @启用此属性后，较快的粒子会更大程度上受到阻力系数的影响。
+---@field TrailsRatio number @一个介于 0 和 1 之间的值，表示已分配轨迹的粒子的比例。Unity 随机分配轨迹，因此该值表示概率。
+---@field TrailsMinVertexDistance number @定义粒子在其轨迹接收新顶点之前必须经过的距离。
+---@field TrailsWorldSpace boolean @启用此属性后，即便使用 Local Simulation Space__，轨迹顶点也不会相对于粒子系统的游戏对象移动。相反，轨迹顶点将被置于世界空间中，并忽略粒子系统的任何移动
+---@field TrailsDieWithParticles boolean @轨迹会在粒子死亡时立即消失
+---@field TrailsRibbonCount number @选择要在整个粒子系统中渲染的轨迹带数量
+---@field TrailsSplitSubEmitterRibbons boolean @在用作子发射器的系统上启用此属性时，从同一父系统粒子生成的粒子将共享一个轨迹带
+---@field TrailsAttachRibbonsToTransform boolean
+---@field TrailsSizeAffectsLifetime boolean @如果启用此属性（选中复选框），则轨迹生命周期受粒子大小影响。
+---@field TrailsOverLifetimeColorMode ParticleSystemGradientMode @通过一条曲线控制整个轨迹在其附着粒子的整个生命周期内的颜色。
+---@field TrailsOverMode ParticleSystemGradientMode @通过一条曲线控制轨迹沿其长度的颜色。
+---@field TrailsOverGradient ParticleEmitterColorGradient @通过一条曲线控制轨迹沿其长度的颜色。。
+---@field TrailsGenerateLightingData boolean @通过启用此属性（选中复选框），可在构建轨迹几何体时包含法线和切线。这样允许它们使用具有场景光照的材质，例如通过标准着色器，或通过使用自定义着色器。
+---@field TrailsShadowBias number
+---@field TrailsAlignment ParticleLineAlignment
+---@field EnableColorBySpeed boolean
+---@field ColorBySpeedGradient ParticleEmitterColorGradient @在速度范围内定义的粒子的颜色渐变。
+---@field ColorBySpeedRange Vector2 @颜色渐变映射到的速度范围的下限和上限（超出范围的速度将映射到渐变的端点）。。
+---@field EnableSizeBySpeed boolean
+---@field SizeBySpeedRange Vector2 @大小曲线映射到的速度范围的下限和上限（超出范围的速度将映射到曲线的端点）。
+---@field EnableRotationBySpeed boolean
+---@field RotationBySpeedRange Vector2 @大小曲线映射到的速度范围的下限和上限（超出范围的速度将映射到曲线的端点）。
+---@field EnableNoise boolean
+---@field NoiseFrequency number @此属性可控制粒子改变行进方向的频率以及方向变化的突然程度。
+---@field NoiseDamping boolean @启用此属性后，强度与频率成正比。
+---@field NoiseOctaveCount number @指定组合多少层重叠噪声来产生最终噪声值。
+---@field NoiseOctaveMultiplier number @对于每个附加的噪声层，按此比例降低强度。
+---@field NoiseOctaveScale number @对于每个附加的噪声层，按此乘数调整频率。
+---@field NoiseQuality ParticleQualityDropdown @较低的质量设置可显著降低性能成本，但也会影响噪声的有趣程度。请使用能为您提供所需行为的最低质量以获得最佳性能。
+---@field NoiseRemapEnabled boolean @将最终噪声值重新映射到不同的范围。
+---@field EnableCustomData boolean
+---@field CustomDataMode1 ParticleCustomDataMode
+---@field CustomDataColorMode1 ParticleSystemGradientMode
+---@field CustomDataMode2 ParticleCustomDataMode
+---@field CustomDataColorMode2 ParticleSystemGradientMode
+---@field EnableShape boolean @特效
+---@field ShapeType EmitterShape @特效类型
+---@field ShapeRadius number @形状的圆形半径
+---@field ShapeRadiusMode ParticleShapeMeshSpawnMode @定义 Unity 如何在形状的弧形周围生成粒子
+---@field ShapeRadiusSpread number @弧形周围可产生粒子的离散间隔
+---@field ShapeRadiusThickness number @发射粒子的体积比例
+---@field ShapeArc number @形成发射器形状的整圆的角部。
+---@field ShapeArcMode ParticleShapeMeshSpawnMode @定义 Unity 如何在形状的弧形周围生成粒子
+---@field ShapeArcSpread number @弧形周围可产生粒子的离散间隔
+---@field ShapeAngle number @锥体在其顶点处的角度
+---@field ShapeLength number @锥体的长度
+---@field ShapeConeType ParticleShapeConeType @Cone类型
+---@field ShapeDonutRadius number @外圆环的粗度
+---@field ShapeBoxType ParticleShapeBoxType @Box类型
+---@field ShapeBoxThickness Vector3 @发射粒子的体积比例
+---@field ShapeMeshType ParticleShapeMeshType @mesh类型
+---@field ShapeMeshSpawnMode ParticleShapeMeshSpawnMode @定义 Unity 如何在形状的弧形周围生成粒子
+---@field ShapeMeshSpawnSpread number @弧形周围可产生粒子的离散间隔
+---@field StartLifetimeState ParticleSystemCurveMode @特效生命周期
+---@field StartSpeedState ParticleSystemCurveMode @开始速度
+---@field GravityModifierState ParticleSystemCurveMode @重力
+---@field RateOverTimeState ParticleSystemCurveMode @（随时间的速率），每单位时间发射的粒子数量
+---@field RateOverDistanceState ParticleSystemCurveMode @（通过距离的速率），每单位距离发射的粒子数量
+---@field FrameOverTimeState ParticleSystemCurveMode @通过一条曲线指定动画帧随着时间的推移如何增加
+---@field VelocityOverLifeTimeLinearState ParticleSystemCurveMode @X，Y和Z轴的速度
+---@field VelocityOverLifeTimeOrbitalState ParticleSystemCurveMode @粒子围绕 X、Y 和 Z 轴的轨道速度。
+---@field VelocityOverLifeTimeOffsetState ParticleSystemCurveMode @轨道中心的位置，适用于轨道运行粒子。
+---@field VelocityOverLifeTimeRadialState ParticleSystemCurveMode @粒子远离/朝向中心位置的径向速度。
+---@field VelocityOverLifeTimeSpeedModifierState ParticleSystemCurveMode @在当前行进方向上/周围向粒子的速度应用一个乘数。
+---@field TrailsLifetimeState ParticleSystemCurveMode @轨迹中每个顶点的生命周期，表示为所属粒子的生命周期的乘数。当每个新顶点添加到轨迹时，该顶点将在其存在时间超过其总生命周期后消失。
+---@field WidthOverTrailsState ParticleSystemCurveMode @轨迹上方的宽度
+---@field NoiseScrollSpeedState ParticleSystemCurveMode @随着时间的推移而移动噪声场可产生更不可预测和不稳定的粒子移动
+---@field NoiseRemapState ParticleSystemCurveMode @将最终噪声值重新映射到不同的范围
+---@field NoisePositionAmountState ParticleSystemCurveMode @用于控制噪声对粒子位置影响程度的乘数
+---@field NoiseRotationAmountState ParticleSystemCurveMode @用于控制噪声对粒子旋转（以度/秒为单位）影响程度的乘数。
+---@field NoiseSizeAmountState ParticleSystemCurveMode @用于控制噪声对粒子大小影响程度的乘数
+---@field ShapeRadiusSpeedState ParticleSystemCurveMode @发射位置围绕弧形移动的速度
+---@field ShapeArcSpeedState ParticleSystemCurveMode @发射位置围绕弧形移动的速度
+---@field ShapeMeshSpawnSpeedState ParticleSystemCurveMode @发射位置围绕弧形移动的速度
+---@field CustomDataVectorX1State ParticleSystemCurveMode
+---@field CustomDataVectorY1State ParticleSystemCurveMode
+---@field CustomDataVectorZ1State ParticleSystemCurveMode
+---@field CustomDataVectorW1State ParticleSystemCurveMode
+---@field CustomDataVectorX2State ParticleSystemCurveMode
+---@field CustomDataVectorY2State ParticleSystemCurveMode
+---@field CustomDataVectorZ2State ParticleSystemCurveMode
+---@field CustomDataVectorW2State ParticleSystemCurveMode
+---@field CullLayer CullLayer @消隐层
+---@field IgnoreStreamSync boolean @忽略流同步
+---@field ChildAutoPlay boolean @子节点是否自动播放
+---@field StartDelayState EnumParticleSystemOnlyConstantCurveMode @开始延迟配置
+---@field StartDelayConstant number @开始延迟单常量
+---@field StartDelayTwoConstant RangeInfo @开始延迟双常量
+---@field StartLifeTimeConstant number @开始生命周期单常量
+---@field StartLifeTimeTwoConstant RangeInfo @开始生命周期双常量
+---@field StartLifeTimeCurve FloatCurve @开始生命周期双常量
+---@field StartLifeTimeTwoCurve RangeFloatCurve @开始生命周期双常量
+---@field StartSpeedConstant number @开始速度单常量
+---@field StartSpeedTwoConstant RangeInfo @开始速度双常量
+---@field StartSpeedOneCurve FloatCurve @开始速度曲线
+---@field StartSpeedTwoCurve RangeFloatCurve @开始速度双曲线
+---@field Start3DSizeSeparate boolean @是否开启Start3DSize 3轴
+---@field Start3DSizeState ParticleSystemCurveMode @特效尺寸
+---@field Start3DSizeXConstant number
+---@field Start3DSizeXTwoConstant RangeInfo
+---@field Start3DSizeXCurve FloatCurve
+---@field Start3DSizeXTwoCurve RangeFloatCurve
+---@field Start3DSizeYConstant number
+---@field Start3DSizeYTwoConstant RangeInfo
+---@field Start3DSizeYCurve FloatCurve
+---@field Start3DSizeYTwoCurve RangeFloatCurve
+---@field Start3DSizeZConstant number
+---@field Start3DSizeZTwoConstant RangeInfo
+---@field Start3DSizeZCurve FloatCurve
+---@field Start3DSizeZTwoCurve RangeFloatCurve
+---@field Start3DRotationSeparate boolean @是否开启Start3DRotation 3轴
+---@field Start3DRotationState ParticleSystemCurveMode @特效尺寸
+---@field Start3DRotationZConstant number
+---@field Start3DRotationZTwoConstant RangeInfo
+---@field Start3DRotationZCurve FloatCurve
+---@field Start3DRotationZTwoCurve RangeFloatCurve
+---@field Start3DRotationYConstant number
+---@field Start3DRotationYTwoConstant RangeInfo
+---@field Start3DRotationYCurve FloatCurve
+---@field Start3DRotationYTwoCurve RangeFloatCurve
+---@field Start3DRotationXConstant number
+---@field Start3DRotationXTwoConstant RangeInfo
+---@field Start3DRotationXCurve FloatCurve
+---@field Start3DRotationXTwoCurve RangeFloatCurve
+---@field FlipRotation number
+---@field StartColorState ParticleSystemGradientMode @粒子颜色方式
+---@field StartColorQuad ColorQuad @粒子颜色方式
+---@field StartColorQuad2 ColorQuad @粒子颜色方式
+---@field StartColorGradient2 ParticleEmitterColorGradient @粒子颜色方式
+---@field GravityModifierConstant number @粒子颜色方式
+---@field GravityModifierTwoConstant RangeInfo @粒子颜色方式
+---@field GravityModifierOneCurve FloatCurve @粒子颜色方式
+---@field GravityModifierTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RateOverTimeConstant number @粒子颜色方式
+---@field RateOverTimeTwoConstant RangeInfo @粒子颜色方式
+---@field RateOverTimeOneCurve FloatCurve @粒子颜色方式
+---@field RateOverTimeTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RateOverDistanceConstant number @粒子颜色方式
+---@field RateOverDistanceTwoConstant RangeInfo @粒子颜色方式
+---@field RateOverDistanceOneCurve FloatCurve @粒子颜色方式
+---@field RateOverDistanceTwoCurve RangeFloatCurve @粒子颜色方式
+---@field ShapeRadiusSpeedConstant number @粒子颜色方式
+---@field ShapeRadiusSpeedTwoConstant RangeInfo @粒子颜色方式
+---@field ShapeRadiusSpeedOneCurve FloatCurve @粒子颜色方式
+---@field ShapeRadiusSpeedTwoCurve RangeFloatCurve @粒子颜色方式
+---@field ShapeArcSpeedConstant number @粒子颜色方式
+---@field ShapeArcSpeedTwoConstant RangeInfo @粒子颜色方式
+---@field ShapeArcSpeedOneCurve FloatCurve @粒子颜色方式
+---@field ShapeArcSpeedTwoCurve RangeFloatCurve @粒子颜色方式
+---@field ShapeMeshSpawnSpeedConstant number @粒子颜色方式
+---@field ShapeMeshSpawnSpeedTwoConstant RangeInfo @粒子颜色方式
+---@field ShapeMeshSpawnSpeedOneCurve FloatCurve @粒子颜色方式
+---@field ShapeMeshSpawnSpeedTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeLinearConstant Vector3 @粒子颜色方式
+---@field VelocityOverLifeTimeLinearTwoConstant Vector3 @粒子颜色方式
+---@field VelocityOverLifeTimeLinearXOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeLinearXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeLinearYOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeLinearYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeLinearZOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeLinearZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalConstant Vector3 @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalTwoConstant Vector3 @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalXOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalYOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalZOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOrbitalZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetConstant Vector3 @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetTwoConstant Vector3 @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetXOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetYOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetZOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeOffsetZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeRadialConstant number @粒子颜色方式
+---@field VelocityOverLifeTimeRadialTwoConstant RangeInfo @粒子颜色方式
+---@field VelocityOverLifeTimeRadialOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeRadialTwoCurve RangeFloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeSpeedModifierConstant number @粒子颜色方式
+---@field VelocityOverLifeTimeSpeedModifierTwoConstant RangeInfo @粒子颜色方式
+---@field VelocityOverLifeTimeSpeedModifierOneCurve FloatCurve @粒子颜色方式
+---@field VelocityOverLifeTimeSpeedModifierTwoCurve RangeFloatCurve @粒子颜色方式
+---@field LimitVelocitySpeedState ParticleSystemCurveMode @粒子颜色方式
+---@field LimitVelocitySpeedConstant number @粒子颜色方式
+---@field LimitVelocitySpeedTwoConstant RangeInfo @粒子颜色方式
+---@field LimitVelocitySpeedOneCurve FloatCurve @粒子颜色方式
+---@field LimitVelocitySpeedTwoCurve RangeFloatCurve @粒子颜色方式
+---@field LimitVelocitySeparateSpeedState ParticleSystemCurveMode @粒子颜色方式
+---@field LimitVelocitySeparateSpeedConstant Vector3 @粒子颜色方式
+---@field LimitVelocitySeparateSpeedTwoConstant Vector3 @粒子颜色方式
+---@field LimitVelocitySeparateSpeedXOneCurve FloatCurve @粒子颜色方式
+---@field LimitVelocitySeparateSpeedXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field LimitVelocitySeparateSpeedYOneCurve FloatCurve @粒子颜色方式
+---@field LimitVelocitySeparateSpeedYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field LimitVelocitySeparateSpeedZOneCurve FloatCurve @粒子颜色方式
+---@field LimitVelocitySeparateSpeedZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field LimitVelocityDragState ParticleSystemCurveMode @粒子颜色方式
+---@field LimitVelocityDragConstant number @粒子颜色方式
+---@field LimitVelocityDragTwoConstant RangeInfo @粒子颜色方式
+---@field LimitVelocityDragOneCurve FloatCurve @粒子颜色方式
+---@field LimitVelocityDragTwoCurve RangeFloatCurve @粒子颜色方式
+---@field ColorBySpeedState ParticleSystemGradientMode @粒子颜色方式
+---@field ColorBySpeedQuad ColorQuad @粒子颜色方式
+---@field ColorBySpeedQuad2 ColorQuad @粒子颜色方式
+---@field ColorBySpeedGradient2 ParticleEmitterColorGradient @粒子颜色方式
+---@field SizeOverLifeState ParticleSystemCurveMode @粒子颜色方式
+---@field SizeOverLifeConstant Vector3 @粒子颜色方式
+---@field SizeOverLifeTwoConstant Vector3 @粒子颜色方式
+---@field SizeOverLifeXOneCurve FloatCurve @粒子颜色方式
+---@field SizeOverLifeXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field SizeOverLifeYOneCurve FloatCurve @粒子颜色方式
+---@field SizeOverLifeYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field SizeOverLifeZOneCurve FloatCurve @粒子颜色方式
+---@field SizeOverLifeZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field EnableSizeOverLifeSeparateAxes boolean @粒子颜色方式
+---@field SizeBySpeedState ParticleSystemCurveMode @粒子颜色方式
+---@field SizeBySpeedConstant Vector3 @粒子颜色方式
+---@field SizeBySpeedTwoConstant Vector3 @粒子颜色方式
+---@field SizeBySpeedXOneCurve FloatCurve @粒子颜色方式
+---@field SizeBySpeedXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field SizeBySpeedYOneCurve FloatCurve @粒子颜色方式
+---@field SizeBySpeedYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field SizeBySpeedZOneCurve FloatCurve @粒子颜色方式
+---@field SizeBySpeedZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RotationOverLifeState ParticleSystemCurveMode @粒子颜色方式
+---@field RotationOverLifeConstant Vector3 @粒子颜色方式
+---@field RotationOverLifeTwoConstant Vector3 @粒子颜色方式
+---@field RotationOverLifeXOneCurve FloatCurve @粒子颜色方式
+---@field RotationOverLifeXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RotationOverLifeYOneCurve FloatCurve @粒子颜色方式
+---@field RotationOverLifeYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RotationOverLifeZOneCurve FloatCurve @粒子颜色方式
+---@field RotationOverLifeZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RotationBySpeedState ParticleSystemCurveMode @粒子颜色方式
+---@field RotationBySpeedConstant Vector3 @粒子颜色方式
+---@field RotationBySpeedTwoConstant Vector3 @粒子颜色方式
+---@field RotationBySpeedXOneCurve FloatCurve @粒子颜色方式
+---@field RotationBySpeedXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RotationBySpeedYOneCurve FloatCurve @粒子颜色方式
+---@field RotationBySpeedYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field RotationBySpeedZOneCurve FloatCurve @粒子颜色方式
+---@field RotationBySpeedZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseStrengthState ParticleSystemCurveMode @粒子颜色方式
+---@field NoiseStrengthConstant Vector3 @粒子颜色方式
+---@field NoiseStrengthTwoConstant Vector3 @粒子颜色方式
+---@field NoiseStrengthXOneCurve FloatCurve @粒子颜色方式
+---@field NoiseStrengthXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseStrengthYOneCurve FloatCurve @粒子颜色方式
+---@field NoiseStrengthYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseStrengthZOneCurve FloatCurve @粒子颜色方式
+---@field NoiseStrengthZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseScrollSpeedConstant number @粒子颜色方式
+---@field NoiseScrollSpeedTwoConstant RangeInfo @粒子颜色方式
+---@field NoiseScrollSpeedOneCurve FloatCurve @粒子颜色方式
+---@field NoiseScrollSpeedTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseRemapConstant Vector3 @粒子颜色方式
+---@field NoiseRemapTwoConstant Vector3 @粒子颜色方式
+---@field NoiseRemapXOneCurve FloatCurve @粒子颜色方式
+---@field NoiseRemapXTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseRemapYOneCurve FloatCurve @粒子颜色方式
+---@field NoiseRemapYTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseRemapZOneCurve FloatCurve @粒子颜色方式
+---@field NoiseRemapZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoisePositionAmountConstant number @粒子颜色方式
+---@field NoisePositionAmountTwoConstant RangeInfo @粒子颜色方式
+---@field NoisePositionAmountOneCurve FloatCurve @粒子颜色方式
+---@field NoisePositionAmountTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseRotationAmountConstant number @粒子颜色方式
+---@field NoiseRotationAmountTwoConstant RangeInfo @粒子颜色方式
+---@field NoiseRotationAmountOneCurve FloatCurve @粒子颜色方式
+---@field NoiseRotationAmountTwoCurve RangeFloatCurve @粒子颜色方式
+---@field NoiseSizeAmountConstant number @粒子颜色方式
+---@field NoiseSizeAmountTwoConstant RangeInfo @粒子颜色方式
+---@field NoiseSizeAmountOneCurve FloatCurve @粒子颜色方式
+---@field NoiseSizeAmountTwoCurve RangeFloatCurve @粒子颜色方式
+---@field FrameOverTimeConstant number @粒子颜色方式
+---@field FrameOverTimeTwoConstant RangeInfo @粒子颜色方式
+---@field FrameOverTimeOneCurve FloatCurve @粒子颜色方式
+---@field FrameOverTimeTwoCurve RangeFloatCurve @粒子颜色方式
+---@field UVStartFrameState EnumParticleSystemOnlyConstantCurveMode @粒子颜色方式
+---@field UVStartFrameConstant number @粒子颜色方式
+---@field UVStartFrameTwoConstant RangeInfo @粒子颜色方式
+---@field TrailsLifetimeConstant number @粒子颜色方式
+---@field TrailsLifetimeTwoConstant RangeInfo @粒子颜色方式
+---@field TrailsLifetimeOneCurve FloatCurve @粒子颜色方式
+---@field TrailsLifetimeTwoCurve RangeFloatCurve @粒子颜色方式
+---@field TrailsOverLifetimeColorQuad ColorQuad @粒子颜色方式
+---@field TrailsOverLifetimeColorGradient ParticleEmitterColorGradient @粒子颜色方式
+---@field TrailsOverLifetimeQuad2 ColorQuad @粒子颜色方式
+---@field TrailsOverLifetimeGradient2 ParticleEmitterColorGradient @粒子颜色方式
+---@field WidthOverTrailsConstant number @粒子颜色方式
+---@field WidthOverTrailsTwoConstant RangeInfo @粒子颜色方式
+---@field WidthOverTrailsOneCurve FloatCurve @粒子颜色方式
+---@field WidthOverTrailsTwoCurve RangeFloatCurve @粒子颜色方式
+---@field TrailsOverQuad ColorQuad @粒子颜色方式
+---@field TrailsOverQuad2 ColorQuad @粒子颜色方式
+---@field TrailsOverGradient2 ParticleEmitterColorGradient @粒子颜色方式
+---@field CustomData1ColorQuad ColorQuad @粒子颜色方式
+---@field CustomData1ColorGradient ParticleEmitterColorGradient @粒子颜色方式
+---@field CustomData1ColorQuad2 ColorQuad @粒子颜色方式
+---@field CustomData1ColorGradient2 ParticleEmitterColorGradient @粒子颜色方式
+---@field CustomData1XConstant number @粒子颜色方式
+---@field CustomData1XTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData1XOneCurve FloatCurve @粒子颜色方式
+---@field CustomData1XTwoCurve RangeFloatCurve @粒子颜色方式
+---@field CustomData1YConstant number @粒子颜色方式
+---@field CustomData1YTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData1YOneCurve FloatCurve @粒子颜色方式
+---@field CustomData1YTwoCurve RangeFloatCurve @粒子颜色方式
+---@field CustomData1ZConstant number @粒子颜色方式
+---@field CustomData1ZTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData1ZOneCurve FloatCurve @粒子颜色方式
+---@field CustomData1ZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field CustomData1WConstant number @粒子颜色方式
+---@field CustomData1WTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData1WOneCurve FloatCurve @粒子颜色方式
+---@field CustomData1WTwoCurve RangeFloatCurve @粒子颜色方式
+---@field CustomData2ColorQuad ColorQuad @粒子颜色方式
+---@field CustomData2ColorGradient ParticleEmitterColorGradient @粒子颜色方式
+---@field CustomData2ColorQuad2 ColorQuad @粒子颜色方式
+---@field CustomData2ColorGradient2 ParticleEmitterColorGradient @粒子颜色方式
+---@field CustomData2XConstant number @粒子颜色方式
+---@field CustomData2XTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData2XOneCurve FloatCurve @粒子颜色方式
+---@field CustomData2XTwoCurve RangeFloatCurve @粒子颜色方式
+---@field CustomData2YConstant number @粒子颜色方式
+---@field CustomData2YTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData2YOneCurve FloatCurve @粒子颜色方式
+---@field CustomData2YTwoCurve RangeFloatCurve @粒子颜色方式
+---@field CustomData2ZConstant number @粒子颜色方式
+---@field CustomData2ZTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData2ZOneCurve FloatCurve @粒子颜色方式
+---@field CustomData2ZTwoCurve RangeFloatCurve @粒子颜色方式
+---@field CustomData2WConstant number @粒子颜色方式
+---@field CustomData2WTwoConstant RangeInfo @粒子颜色方式
+---@field CustomData2WOneCurve FloatCurve @粒子颜色方式
+---@field CustomData2WTwoCurve RangeFloatCurve @粒子颜色方式
+---@field StopPlaying SBXSignal @停止播放时触发
+local EffectObject = {}
+
+--- 测试
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+function EffectObject:Test() end
+
+--- 设置资源id
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param assetID string
+---@param callback function
+function EffectObject:SetAssetID(assetID, callback) end
+
+--- 特效开始播放
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+function EffectObject:Start() end
+
+--- 特效暂停播放
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+function EffectObject:Pause() end
+
+--- 特效重新开始播放
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+function EffectObject:ReStart() end
+
+--- 特效停止播放
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param behavior number
+function EffectObject:Stop(behavior) end
+
+--- 修改ColorOverLifeTime的minGradient的_colors
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param idx number
+---@param time number
+---@param color ColorQuad
+function EffectObject:SetCOLTMinGradientColors(idx, time, color) end
+
+--- 修改ColorOverLifeTime的maxGradient的_colors
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param idx number
+---@param time number
+---@param color ColorQuad
+function EffectObject:SetCOLTMaxGradientColors(idx, time, color) end
+
+--- 修改ColorOverLifeTime的minGradient的_alphas
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param idx number
+---@param time number
+---@param alpha number
+function EffectObject:SetCOLTMinGradientAlphas(idx, time, alpha) end
+
+--- 修改ColorOverLifeTime的maxGradient的_alphas
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param idx number
+---@param time number
+---@param alpha number
+function EffectObject:SetCOLTMaxGradientAlphas(idx, time, alpha) end
+
+--- 修改ColorOverLifeTime的minGradient的mode
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param mode number
+---@param colorkey number
+---@param alphakey number
+function EffectObject:SetCOLTMinGradientModeAndKey(mode, colorkey, alphakey) end
+
+--- 修改ColorOverLifeTime的maxGradient的mode
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Effect/EffectObject.html
+---@param mode number
+---@param colorkey number
+---@param alphakey number
+function EffectObject:SetCOLTMaxGradientModeAndKey(mode, colorkey, alphakey) end
+
+return EffectObject

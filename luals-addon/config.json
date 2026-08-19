@@ -1,0 +1,7 @@
+{
+  "name": "MiniStudioNodeAddon",
+  "files": [
+    "node_require.lua",
+    "plugin.lua"
+  ]
+}

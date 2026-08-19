@@ -1,0 +1,98 @@
+---@meta
+
+--- 后处理节点，用于管理场景中的各种后处理效果，包括泛光(Bloom)、景深(DOF)、抗锯齿(Antialiasing)、色彩查找表(LUTs)、全局时间环境遮蔽(GTAO)、色差(ChromaticAberration)、暗角(Vignette)、径向闪光(RadialFlash)和自定义材质列表等效果。需要注意：当MiniWorldStudio设置为低QualityLevel时，部分后处理效果可能以不同方式工作或不工作
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Build/PostProcessing.html
+---@class PostProcessing : SandboxNode
+---@field BloomActive boolean @泛光效果开关，用于控制是否启用全屏泛光效果。默认值为false
+---@field BloomIntensity number @泛光强度，用于控制泛光效果的亮度值。数值越大，泛光效果越明显。默认值为2.0
+---@field BloomThreshold number @泛光阈值，用于设置像素亮度达到多少时才会产生泛光效果。只有亮度超过此阈值的像素才会参与泛光计算。默认值为-1.0
+---@field DofActive boolean @景深效果开关，用于控制是否启用景深效果，模拟相机的焦点模糊效果。默认值为false
+---@field DofFocalRegion number @景深焦点区域大小，用于设置完全清晰的焦点区域范围。默认值为0.0
+---@field DofNearTransitionRegion number @景深近处过渡区域大小，用于设置从焦点区域到近处模糊区域的过渡距离。默认值为300.0
+---@field DofFarTransitionRegion number @景深远处过渡区域大小，用于设置从焦点区域到远处模糊区域的过渡距离。默认值为500.0
+---@field DofFocalDistance number @景深焦点距离，用于设置相机到焦点平面的距离，此距离上的物体会保持清晰。默认值为100.0
+---@field DofScale number @景深模糊强度比例，用于控制景深模糊的强度倍数。数值越大，模糊效果越强。默认值为1.0
+---@field AntialiasingEnable boolean @抗锯齿开关，用于控制是否启用抗锯齿效果，以减少渲染图像中的锯齿状边缘。Windows平台默认值为true，其他平台默认值为false
+---@field AntialiasingMethod AntialiasingMethodDesc @抗锯齿方法，用于指定使用的抗锯齿算法。默认值为kAntialiasingMethodFXAA
+---@field AntialiasingQuality AntialiasingQualityDesc @抗锯齿质量等级，用于设置抗锯齿效果的渲染质量。Windows平台默认值为kAntialiasingQualityHigh，其他平台默认值为kAntialiasingQualityMedium
+---@field LUTsActive boolean @色彩查找表开关，用于控制是否启用色彩查找表效果，用于进行色彩校正和风格化处理。默认值为false
+---@field LUTsTemperatureType LUTsTemperatureType @LUTs色温调整类型，用于指定色温调整的方式。默认值为WhiteBalance（白平衡模式）
+---@field LUTsWhiteTemp number @LUTs白平衡色温值，用于调整白平衡的色温（单位：开尔文），范围0-15000。默认值为6450.0
+---@field LUTsWhiteTint number @LUTs白平衡色调偏移，用于微调白平衡的色调偏移量，范围-1.0到1.0。默认值为0.0
+---@field LUTsColorCorrectionShadowsMax number @LUTs阴影区域最大色彩校正值，用于控制阴影区域的颜色校正强度，范围-1.0到1.0。默认值为0.8
+---@field LUTsColorCorrectionHighlightsMin number @LUTs高光区域最小色彩校正值，用于控制高光区域的颜色校正强度，范围-1.0到1.0。默认值为0.5
+---@field LUTsBlueCorrection number @LUTs蓝光校正强度，用于校正蓝光通道的颜色，范围0-1.0。默认值为0.60
+---@field LUTsExpandGamut number @LUTs色域扩展系数，用于扩展色彩查找表的色域范围，范围0-1.0。默认值为1.0
+---@field LUTsToneCurveAmout number @LUTs色调曲线强度，用于控制色调曲线调整的强度，范围0-1.0。默认值为1.0
+---@field LUTsFilmicToneMapSlope number @LUTs电影色调映射线性段斜率，用于控制电影色调映射曲线线性段的斜率，范围0-1.0。默认值为0.88
+---@field LUTsFilmicToneMapToe number @LUTs电影色调映射曲线脚部（暗部）参数，用于控制暗部区域的色调映射，范围0-1.0。默认值为0.55
+---@field LUTsFilmicToneMapShoulder number @LUTs电影色调映射曲线肩部（亮部）参数，用于控制亮部区域的色调映射，范围0-1.0。默认值为0.26
+---@field LUTsFilmicToneMapBlackClip number @LUTs电影色调映射黑色裁剪值，用于设置黑色区域的裁剪阈值，范围0-1.0。默认值为0.0
+---@field LUTsFilmicToneMapWhiteClip number @LUTs电影色调映射白色裁剪值，用于设置白色区域的裁剪阈值，范围0-1.0。默认值为0.04
+---@field LUTsBaseSaturation ColorQuad @LUTs基础饱和度颜色，用于调整整体图像的饱和度，每个通道独立控制对应颜色通道的饱和度。默认值为(255,255,255,255)
+---@field LUTsBaseContrast ColorQuad @LUTs基础对比度颜色，用于调整整体图像的对比度，每个通道独立控制对应颜色通道的对比度。默认值为(255,255,255,255)
+---@field LUTsBaseGamma ColorQuad @LUTs基础Gamma值颜色，用于调整整体图像的Gamma曲线，每个通道独立控制对应颜色通道的Gamma值。默认值为(255,255,255,255)
+---@field LUTsBaseGain ColorQuad @LUTs基础增益颜色，用于调整整体图像的亮度增益，每个通道独立控制对应颜色通道的增益。默认值为(255,255,255,255)
+---@field LUTsBaseOffset ColorQuad @LUTs基础偏移颜色，用于调整整体图像的颜色偏移，每个通道独立控制对应颜色通道的偏移量。默认值为(0,0,0,0)
+---@field LUTsShadowSaturation ColorQuad @LUTs阴影区域饱和度颜色，用于调整阴影区域的饱和度，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsShadowContrast ColorQuad @LUTs阴影区域对比度颜色，用于调整阴影区域的对比度，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsShadowGamma ColorQuad @LUTs阴影区域Gamma值颜色，用于调整阴影区域的Gamma曲线，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsShadowGain ColorQuad @LUTs阴影区域增益颜色，用于调整阴影区域的亮度增益，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsShadowOffset ColorQuad @LUTs阴影区域偏移颜色，用于调整阴影区域的颜色偏移，每个通道独立控制。默认值为(0,0,0,0)
+---@field LUTsMidtoneSaturation ColorQuad @LUTs中间色调区域饱和度颜色，用于调整中间色调区域的饱和度，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsMidtoneContrast ColorQuad @LUTs中间色调区域对比度颜色，用于调整中间色调区域的对比度，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsMidtoneGamma ColorQuad @LUTs中间色调区域Gamma值颜色，用于调整中间色调区域的Gamma曲线，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsMidtoneGain ColorQuad @LUTs中间色调区域增益颜色，用于调整中间色调区域的亮度增益，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsMidtoneOffset ColorQuad @LUTs中间色调区域偏移颜色，用于调整中间色调区域的颜色偏移，每个通道独立控制。默认值为(0,0,0,0)
+---@field LUTsHighlightSaturation ColorQuad @LUTs高光区域饱和度颜色，用于调整高光区域的饱和度，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsHighlightContrast ColorQuad @LUTs高光区域对比度颜色，用于调整高光区域的对比度，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsHighlightGamma ColorQuad @LUTs高光区域Gamma值颜色，用于调整高光区域的Gamma曲线，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsHighlightGain ColorQuad @LUTs高光区域增益颜色，用于调整高光区域的亮度增益，每个通道独立控制。默认值为(255,255,255,255)
+---@field LUTsHighlightOffset ColorQuad @LUTs高光区域偏移颜色，用于调整高光区域的颜色偏移，每个通道独立控制。默认值为(0,0,0,0)
+---@field LUTsColorGradingLUTPath string @LUTs色彩分级查找表纹理路径，用于指定色彩校正的LUT纹理资源，支持PNG、JPEG、JPG格式的纹理文件。默认值为空字符串
+---@field GTAOActive boolean @全局时间环境遮蔽开关，用于控制是否启用GTAO效果，模拟环境光遮蔽以增强场景的立体感。默认值为false
+---@field GTAOThicknessblend number @GTAO厚度混合系数，用于控制GTAO效果的厚度插值，范围0-1。默认值为0.75
+---@field GTAOFalloffStartRatio number @GTAO衰减起始距离比例，用于设置GTAO效果开始衰减的距离比例，范围0-1。默认值为0.5
+---@field GTAOFalloffEnd number @GTAO衰减结束距离，用于设置GTAO效果衰减的最大距离，范围0-300。默认值为70.0
+---@field GTAOFadeoutDistance number @GTAO渐隐距离，用于设置GTAO效果完全消失的距离，范围0-20000。默认值为7000.0
+---@field GTAOFadeoutRadius number @GTAO渐隐半径，用于设置GTAO效果渐隐的半径范围，范围0-10000。默认值为3000.0
+---@field GTAOIntensity number @GTAO强度，用于控制GTAO效果的强度指数，范围0-1。数值越大，环境遮蔽效果越明显。默认值为0.5
+---@field GTAOPower number @GTAO强度倍率，用于控制GTAO效果的强度倍率，范围0-10。数值越大，环境遮蔽效果越强。默认值为3.5
+---@field ChromaticAberrationActive boolean @色差效果开关，用于控制是否启用色差效果，模拟相机镜头产生的色散现象。默认值为false
+---@field ChromaticAberrationIntensity number @色差强度，用于控制色差效果的强度，范围0-8。数值越大，色散效果越明显。默认值为1.0
+---@field ChromaticAberrationStartOffset number @色差开始偏移距离，用于设置色差效果开始的位置偏移，范围0-1。默认值为0.0
+---@field ChromaticAberrationIterationStep number @色差迭代步长，用于控制色差计算的采样步长，范围0.01-10。默认值为0.01
+---@field ChromaticAberrationIterationSamples number @色差迭代采样次数，用于设置色差计算的采样迭代次数，范围1-8。次数越多效果越精确但性能开销越大。默认值为1.0
+---@field VignetteActive boolean @暗角效果开关，用于控制是否启用暗角效果，在画面边缘产生渐暗效果。默认值为false
+---@field VignetteIntensity number @暗角强度，用于控制暗角效果的强度，范围0-1。数值越大，边缘暗化效果越明显。默认值为0.0
+---@field VignetteRounded boolean @暗角圆形边缘开关，用于控制暗角是否使用圆形边缘。当设置为true时，暗角边缘为圆形；设置为false时，为椭圆形。默认值为false
+---@field VignetteSmoothness number @暗角平滑度，用于控制暗角边缘的过渡平滑程度，范围0-1。数值越大，边缘过渡越平滑。默认值为0.2
+---@field VignetteCenter Vector2 @暗角中心位置（Vector2），用于设置暗角效果的中心点坐标，范围为屏幕空间的UV坐标(0-1)。默认值为(0.5,0.5)
+---@field VignetteColor ColorQuad @暗角颜色，用于设置暗角区域的颜色，通常设置为黑色以产生暗化效果。默认值为(0,0,0,255)
+---@field VignetteMode VignetteMode @暗角模式，用于指定暗角的实现方式。Classic模式使用渐变算法，Masked模式使用遮罩贴图。默认值为Classic
+---@field VignetteRoundness number @暗角圆度，用于控制暗角边缘的圆度，范围0-1。数值越大，边缘越圆润。默认值为1.0
+---@field VignetteMaskTexturePath string @暗角遮罩贴图路径，用于指定暗角的遮罩纹理资源，仅在VignetteMode为Masked时生效。遮罩贴图需要包含透明通道，透明区域不会产生暗角效果。默认值为空字符串
+---@field VignetteMaskOpacity number @暗角遮罩透明度，用于控制遮罩贴图的透明度，范围0-1。仅在VignetteMode为Masked时生效。数值越大，遮罩效果越明显。默认值为1.0
+---@field BloomLuminanceScale number @泛光亮度缩放，用于控制泛光效果的亮度缩放系数，范围0-1。数值越大，泛光越亮。默认值为1.0
+---@field BloomIterator number @泛光迭代次数，用于设置泛光效果的迭代计算次数，范围2-4。次数越多，泛光扩散范围越大，但性能开销也越大。默认值为4
+---@field RadialFlashActive boolean @径向闪光(RadialFlash)效果开关，用于控制是否启用径向闪光效果，在画面中心产生径向扩散的光晕效果。默认值为false
+---@field RadialFlashLuminance number @径向闪光亮度，用于控制径向闪光效果的亮度值，范围0-10。数值越大，闪光效果越亮。默认值为0.65
+---@field RadialFlashRadius number @径向闪光半径，用于控制径向闪光的扩散半径（屏幕空间比例），范围0-1。数值越大，闪光扩散范围越大。默认值为0.001
+---@field RadialFlashContrast number @径向闪光对比度，用于控制径向闪光效果的对比度，范围0-10。数值越大，明暗对比越强烈。默认值为3.0
+---@field RadialFlashThreshold number @径向闪光阈值，用于设置像素亮度达到多少时才会产生径向闪光效果，范围0-1。默认值为0.06
+---@field RadialFlashColor ColorQuad @径向闪光颜色，用于设置径向闪光效果的颜色。默认值为(255,255,255,255)
+---@field RadialFlashPivot Vector2 @径向闪光中心点位置（Vector2），用于设置径向闪光效果的中心点坐标，范围为屏幕空间的UV坐标(0-1)。默认值为(0.5,0.5)
+---@field RadialFlashScale Vector2 @径向闪光缩放（Vector2），用于控制径向闪光在X和Y轴方向的缩放比例。默认值为(27.36,0.2)
+---@field RadialFlashSpeed Vector2 @径向闪光速度（Vector2），用于控制径向闪光效果的动画速度，用于创建动态闪光效果。默认值为(0.0,-5.5)
+---@field RadialFlashNoiseTexturePath string @径向闪光噪声贴图路径，用于指定径向闪光效果的噪声纹理资源，用于增加闪光效果的细节和随机性。支持PNG、JPEG、JPG格式。默认值为空字符串
+---@field MaterialListActive boolean @后处理材质列表开关，用于控制是否启用自定义后处理材质列表。启用后，MaterialList中指定的后处理材质将按顺序应用于渲染管线。默认值为false
+---@field MaterialList table @后处理材质列表，用于指定按顺序应用的后处理材质资源路径数组。材质必须为后处理域(PostProcess)材质，支持MAT和PREFAB格式。默认值为空数组
+local PostProcessing = {}
+
+--- 根据索引设置材质列表中的材质参数，用于动态修改后处理材质列表中指定材质（通过索引）的参数
+--- @see https://studio.mini1.cn/wiki/Api/Classes/Build/PostProcessing.html
+---@param index number
+---@param table table
+function PostProcessing:SetMaterialListParamByIndex(index, table) end
+
+return PostProcessing

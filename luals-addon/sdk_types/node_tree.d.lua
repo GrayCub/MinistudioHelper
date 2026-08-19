@@ -1,0 +1,1317 @@
+---@meta
+-- __MS_NODE_TREE_JSON__ {"game":{"__type":"GameNode","ContextActionService":{"__type":"ContextActionService"},"UserInputService":{"__type":"UserInputService"},"ConfigService":{"__type":"ConfigService"},"LuaProfileService":{"__type":"LuaProfileService"},"GameSetting":{"__type":"GameSetting"},"MaterialService":{"__type":"MaterialService","LambertOpaque":{"__type":"Material"},"Particle":{"__type":"Material"},"Toon":{"__type":"Material"},"Default":{"__type":"Material"},"LambertBlend":{"__type":"Material"},"X-Ray":{"__type":"Material"},"DefaultLambertOpaque":{"__type":"Material"},"DefaultLambertBlend":{"__type":"Material"}},"Localization":{"__type":"SandboxLocalizationService"},"ScriptService":{"__type":"ScriptServiceHost"},"SceneMgr":{"__type":"SandboxSceneMgrService"},"AssetService":{"__type":"AssetServiceHost"},"SandboxDebugHelper":{"__type":"SandboxDebugHelper"},"MainStorage":{"__type":"MainStorage","Common":{"__type":"SandboxNode","Bridge":{"__type":"ModuleScript","Protocol":{"__type":"ModuleScript"},"GeneralRemoteFunction":{"__type":"RemoteFunction"},"GeneralRemoteEvent":{"__type":"RemoteEvent"}},"EventObject":{"__type":"ModuleScript"},"Global":{"__type":"ModuleScript"},"Utils":{"__type":"ModuleScript","TableHelper":{"__type":"ModuleScript"},"Logging":{"__type":"ModuleScript"},"Class":{"__type":"ModuleScript"},"Math":{"__type":"ModuleScript","MathDefines":{"__type":"ModuleScript"},"Matrix3x3":{"__type":"ModuleScript"},"Matrix3x4":{"__type":"ModuleScript"},"Matrix4x4":{"__type":"ModuleScript"},"PerlinNoise":{"__type":"ModuleScript"},"Quat":{"__type":"ModuleScript"},"Vec2":{"__type":"ModuleScript"},"Vec3":{"__type":"ModuleScript"},"Vec4":{"__type":"ModuleScript"}},"UIHelper":{"__type":"ModuleScript"}},"TimerMgr":{"__type":"ModuleScript"}},"StateMachine":{"__type":"SandboxNode","StateMachine":{"__type":"ModuleScript"},"State":{"__type":"ModuleScript"},"StateMachineEnum":{"__type":"ModuleScript"},"SubStateMachine":{"__type":"ModuleScript"},"Transition":{"__type":"ModuleScript"}},"Container":{"__type":"SandboxNode","Stack":{"__type":"ModuleScript"},"Queue":{"__type":"ModuleScript"},"List":{"__type":"ModuleScript"}},"Camera":{"__type":"SandboxNode","CameraController":{"__type":"ModuleScript"},"ShakeController":{"__type":"ModuleScript","ShakeConfig":{"__type":"ModuleScript"}}},"Player":{"__type":"SandboxNode","PlayerController":{"__type":"ModuleScript"},"StateMachineConfig":{"__type":"ModuleScript"},"PlayerState":{"__type":"ModuleScript"},"PlayerManager":{"__type":"ModuleScript"}},"PostProcessing":{"__type":"SandboxNode","PostProcessing":{"__type":"ModuleScript"}},"UI":{"__type":"SandboxNode","UIManager":{"__type":"ModuleScript"},"UIRoot":{"__type":"ModuleScript"},"UIRootFunctionality":{"__type":"ModuleScript"},"UIComponents":{"__type":"SandboxNode","SliderControl":{"__type":"ModuleScript"},"TipsControl":{"__type":"ModuleScript"}},"UIRootPrefab":{"__type":"SandboxNode","MainUI":{"__type":"UIRoot","BChat":{"__type":"UIButton"},"waterMark":{"__type":"UIImage"},"Play_Joystick_bg":{"__type":"UIImage","Play_Joystick_handle":{"__type":"UIImage"},"Play_Joystick_move_focus_bl":{"__type":"UIImage"},"Play_Joystick_move_focus_br":{"__type":"UIImage"},"Play_Joystick_move_focus_tl":{"__type":"UIImage"},"Play_Joystick_move_focus_tr":{"__type":"UIImage"}},"BJump":{"__type":"UIButton","IJump":{"__type":"UIImage"}},"BExit":{"__type":"UIButton","IExit":{"__type":"UIImage"}}},"Chat":{"__type":"UIRoot","Dimed":{"__type":"UIImage"},"Popup":{"__type":"UIImage","Top":{"__type":"UIImage","Text_Global":{"__type":"UIButton"},"Tab_Focus":{"__type":"UIImage"}},"MessageList":{"__type":"UIList"},"MessageInputGroup":{"__type":"UIImage","MessageInput":{"__type":"UITextInput"},"Bg":{"__type":"UIImage"},"Border":{"__type":"UIImage"},"Placeholder":{"__type":"UITextLabel"}},"Button_Send":{"__type":"UIButton"},"Button_Close":{"__type":"UIButton"}}},"testUI":{"__type":"UIRoot","soundSliderTrack":{"__type":"UIImage","soundSliderBtn":{"__type":"UIButton"},"closeBtn":{"__type":"UIButton"}}},"testCloud":{"__type":"UIRoot","SceneUIPanel":{"__type":"UIPanel","BCloseUI":{"__type":"UIButton"},"BSafeSocket":{"__type":"UIButton"},"BReadCloud":{"__type":"UIButton"},"BWriteCloud":{"__type":"UIButton"},"BGetSafe":{"__type":"UIButton"},"UIListLayout":{"__type":"UIList","TPrintContent":{"__type":"UITextLabel"}}}},"MessageBodyL":{"__type":"UIImage","MessageL":{"__type":"UIImage","PlayerName":{"__type":"UITextLabel"},"Time":{"__type":"UITextLabel"},"Content":{"__type":"UITextLabel"}},"MessageAvaterL":{"__type":"UIImage"}},"MessageBodyR":{"__type":"UIImage","MessageR":{"__type":"UIImage","PlayerName":{"__type":"UITextLabel"},"Time":{"__type":"UITextLabel"},"Content":{"__type":"UITextLabel"}},"MessageAvaterR":{"__type":"UIImage"}}},"UIRootPrefabFunctionality":{"__type":"SandboxNode","MainUI":{"__type":"ModuleScript"},"testUI":{"__type":"ModuleScript"},"testCloud":{"__type":"ModuleScript"},"Chat":{"__type":"ModuleScript"}}},"Actor":{"__type":"SandboxNode","ActorBase":{"__type":"ModuleScript"},"ActorComponent":{"__type":"ModuleScript"}},"Chat123":{"__type":"UIRoot","Dimed":{"__type":"UIImage"},"Popup":{"__type":"UIImage","Top":{"__type":"UIImage","Text_Global":{"__type":"UIButton"},"Tab_Focus":{"__type":"UIImage"}},"MessageList":{"__type":"UIList","MessageBodyL":{"__type":"UIImage","MessageL":{"__type":"UIImage","Name":{"__type":"UITextLabel"},"Time":{"__type":"UITextLabel"},"Content":{"__type":"UITextLabel"}},"MessageAvaterL":{"__type":"UIImage"}},"MessageBodyR":{"__type":"UIImage","MessageR":{"__type":"UIImage","Name":{"__type":"UITextLabel"},"Time":{"__type":"UITextLabel"},"Content":{"__type":"UITextLabel"}},"MessageAvaterR":{"__type":"UIImage"}}},"MessageInputGroup":{"__type":"UIImage","MessageInput":{"__type":"UITextInput"},"Bg":{"__type":"UIImage"},"Border":{"__type":"UIImage"},"Placeholder":{"__type":"UITextLabel"}},"Button_Send":{"__type":"UIButton"},"Button_Close":{"__type":"UIButton"}}},"ChatManager":{"__type":"ModuleScript"}},"InitStorage":{"__type":"InitStorage"},"Loaded":{"__type":"LoadedService"},"ScriptContext":{"__type":"ScriptContext"},"StarterPack":{"__type":"StarterPack"},"RunService":{"__type":"RunService"},"SpawnService":{"__type":"SpawnService"},"Teams":{"__type":"Teams"},"PostEffectService":{"__type":"PostEffectService"},"MouseService":{"__type":"MouseService"},"Players":{"__type":"Players"},"StartPlayer":{"__type":"StartPlayer","StarterCharacterScripts":{"__type":"StarterCharacterScripts"},"StarterPlayerScripts":{"__type":"StarterPlayerScripts","StartInit":{"__type":"LocalScript"},"ClientInit":{"__type":"ModuleScript"}},"PlayerActorTemplate":{"__type":"Actor","AvatarPartGroup":{"__type":"AvatarGroupPart","BODY":{"__type":"AvatarPart"},"HEAD":{"__type":"AvatarPart"},"FACE":{"__type":"AvatarPart"},"FACE_ORNAMENT":{"__type":"AvatarPart"},"JACKET":{"__type":"AvatarPart"},"HAND_ORNAMENT":{"__type":"AvatarPart"},"TROUSERS":{"__type":"AvatarPart"},"SHOE":{"__type":"AvatarPart"},"BACK_ORNAMENT":{"__type":"AvatarPart"},"FOOTPRINT":{"__type":"AvatarPart"},"SKIN":{"__type":"AvatarPart"},"RIGHT_HAND":{"__type":"AvatarPart"},"RIGHT_SHOE":{"__type":"AvatarPart"}},"LivingGroup":{"__type":"OnlyOneBehaviorGroup","SpawnBehavior":{"__type":"BehaviorItem"},"AliveBehavior":{"__type":"BehaviorItem"},"DeadBehavior":{"__type":"BehaviorItem"},"ReSpawnBehavior":{"__type":"BehaviorItem"}},"MoveGroup":{"__type":"OnlyOneBehaviorGroup","IdleBehavior":{"__type":"BehaviorItem"},"WalkBehavior":{"__type":"BehaviorItem"},"JumpBehavior":{"__type":"BehaviorItem"},"DropBehavior":{"__type":"BehaviorItem"},"FlyBehavior":{"__type":"BehaviorItem"}},"InteractGroup":{"__type":"CommonBehaviorGroup","StandUpBehavior":{"__type":"BehaviorItem"},"SitDownBehavior":{"__type":"BehaviorItem"}},"LegacyAnimation":{"__type":"LegacyAnimation"},"Animator":{"__type":"Animator"}},"PlayerActorTemplate2D":{"__type":"Actor2D"}},"StarterGui":{"__type":"StarterGui","BtnExit":{"__type":"UIButton","icon":{"__type":"UIImage"}},"TouchUIMain":{"__type":"UIRoot","Rocker":{"__type":"UIImage","RockerDot":{"__type":"UIImage"}},"BtnJump":{"__type":"UIButton"}},"DefaultUIMain":{"__type":"UIRoot","BtnExit":{"__type":"UIButton","icon":{"__type":"UIImage"}},"BtnChatFrame":{"__type":"UIButton","icon":{"__type":"UIImage"}},"BtnRoomInfo":{"__type":"UIButton","icon":{"__type":"UIImage"}},"BtnSetting":{"__type":"UIButton","icon":{"__type":"UIImage"}},"BtnMicrophone":{"__type":"UIButton","icon":{"__type":"UIImage"},"IconOff":{"__type":"UIImage"}},"BtnHorn":{"__type":"UIButton","icon":{"__type":"UIImage"},"IconOff":{"__type":"UIImage"}}},"LoadingUIMain":{"__type":"UIRoot","bg":{"__type":"UIImage","progressbarbg":{"__type":"UIImage"},"progress":{"__type":"UIImage","MaskUIImage":{"__type":"UIImage"}}}},"Sounds":{"__type":"SandboxNode","DefaultButtonSound":{"__type":"Sound"},"DefaultButtonRelease":{"__type":"Sound"}}},"WorldService":{"__type":"WorldService"},"Chat":{"__type":"Chat"},"TeleportService":{"__type":"TeleportService"},"FriendsService":{"__type":"FriendsService"},"SoundService":{"__type":"SoundService"},"VoiceChatService":{"__type":"VoiceChatService"},"VoiceChatRemoteService":{"__type":"VoiceChatRemoteService"},"TweenService":{"__type":"TweenService"},"PhysXService":{"__type":"PhysXService"},"HttpService":{"__type":"SandboxHttpService"},"NetService":{"__type":"NetService"},"LocalFirst":{"__type":"LocalFirst"},"CollectionService":{"__type":"CollectionService"},"CloudService":{"__type":"CloudService"},"ContentService":{"__type":"ContentService"},"CoreUi":{"__type":"CoreUI"},"CloudAnnouncementService":{"__type":"CloudAnnouncementService"},"TalkService":{"__type":"TalkService"},"DeveloperStoreService":{"__type":"DeveloperStoreService"},"PlayersRemoteService":{"__type":"SandBoxPlayersRemoteService"},"AnalyticsService":{"__type":"AnalyticsService"},"Setting":{"__type":"Setting"},"CloudServerConfigService":{"__type":"CloudServerConfigService"},"FriendInviteService":{"__type":"FriendInviteService"},"FriendInviteRemoteService":{"__type":"FriendInviteRemoteService"},"AdvertisementService":{"__type":"AdvertisementService"},"UtilService":{"__type":"UtilService"},"MeshCacheManegerService":{"__type":"MeshCacheMananger"},"UIManageService":{"__type":"UIManageService"},"OnlineService":{"__type":"OnlineService"},"DebuggerLogRemoteService":{"__type":"DebuggerLogRemoteService"},"DebuggerLogService":{"__type":"DebuggerLogService"},"CustomConfigService":{"__type":"CustomConfigService","ConfigClassGroup":{"__type":"SandboxNode"},"ConfigGroup":{"__type":"SandboxNode"}},"AIService":{"__type":"AIService"},"ServerScriptService":{"__type":"ServerScriptService","ServerInit":{"__type":"Script"}},"ServerStorage":{"__type":"ServerStorage","CloudManager":{"__type":"ModuleScript"}},"SelecterService":{"__type":"SelecterService"},"ReplicatorRoot":{"__type":"ReplicatorRoot","client":{"__type":"SandboxNode"},"server":{"__type":"SandboxNode"}},"BlockService":{"__type":"BlockService"},"NavigationService":{"__type":"NavigationService"},"Navigation2DService":{"__type":"Navigation2DService"},"PluginsService":{"__type":"PluginsService","test":{"__type":"PluginNode","Script":{"__type":"Script"}},"ministro":{"__type":"PluginNode","ministro":{"__type":"Script","dkjson":{"__type":"ModuleScript"},"TimerMgr":{"__type":"ModuleScript"}},"PluginAction":{"__type":"PluginAction"}}},"WorkSpace":{"__type":"WorkSpace","Camera":{"__type":"Camera"},"Environment":{"__type":"Environment","SkyLight":{"__type":"SkyLight"},"Atmosphere":{"__type":"Atmosphere"},"SkyDome":{"__type":"SkyDome"},"SunLight":{"__type":"SunLight"},"PostProcessing":{"__type":"PostProcessing"}},"SpawnLocation1":{"__type":"SpawnLocation"},"Canvas":{"__type":"Canvas","Camera2D":{"__type":"Camera2D"}},"RainParticles":{"__type":"EffectObject","WaterSplashEmitter":{"__type":"EffectObject"},"WaterRingDrops":{"__type":"EffectObject"}},"LandScape.prefab":{"__type":"Model"},"WaterPrefab":{"__type":"Model"},"Smoke":{"__type":"EffectObject"},"WatcherBoxEx":{"__type":"WatcherBoxNodeEx"},"CustomNotify":{"__type":"CustomNotify"}},"legacyActorRoot":{"__type":"LegacyActorRoot"},"CombineManegerService":{"__type":"CombineManeger"}}}
+
+---@class __MS_game_MaterialService : MaterialService
+---@field LambertOpaque Material
+---@field Particle Material
+---@field Toon Material
+---@field Default Material
+---@field LambertBlend Material
+---@field DefaultLambertOpaque Material
+---@field DefaultLambertBlend Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: "LambertOpaque"): Material
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: "LambertOpaque"): Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: "Particle"): Material
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: "Particle"): Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: "Toon"): Material
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: "Toon"): Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: "Default"): Material
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: "Default"): Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: "LambertBlend"): Material
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: "LambertBlend"): Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: "DefaultLambertOpaque"): Material
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: "DefaultLambertOpaque"): Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: "DefaultLambertBlend"): Material
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: "DefaultLambertBlend"): Material
+---@field FindFirstChild fun(self: __MS_game_MaterialService, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MaterialService, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Common_Bridge : ModuleScript
+---@field Protocol ModuleScript
+---@field GeneralRemoteFunction RemoteFunction
+---@field GeneralRemoteEvent RemoteEvent
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Bridge, name: "Protocol"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Bridge, name: "Protocol"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Bridge, name: "GeneralRemoteFunction"): RemoteFunction
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Bridge, name: "GeneralRemoteFunction"): RemoteFunction
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Bridge, name: "GeneralRemoteEvent"): RemoteEvent
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Bridge, name: "GeneralRemoteEvent"): RemoteEvent
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Bridge, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Bridge, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Common_Utils_Math : ModuleScript
+---@field MathDefines ModuleScript
+---@field Matrix3x3 ModuleScript
+---@field Matrix3x4 ModuleScript
+---@field Matrix4x4 ModuleScript
+---@field PerlinNoise ModuleScript
+---@field Quat ModuleScript
+---@field Vec2 ModuleScript
+---@field Vec3 ModuleScript
+---@field Vec4 ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "MathDefines"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "MathDefines"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Matrix3x3"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Matrix3x3"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Matrix3x4"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Matrix3x4"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Matrix4x4"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Matrix4x4"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "PerlinNoise"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "PerlinNoise"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Quat"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Quat"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Vec2"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Vec2"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Vec3"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Vec3"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Vec4"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: "Vec4"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils_Math, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Common_Utils : ModuleScript
+---@field TableHelper ModuleScript
+---@field Logging ModuleScript
+---@field Class ModuleScript
+---@field Math __MS_game_MainStorage_Common_Utils_Math
+---@field UIHelper ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils, name: "TableHelper"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils, name: "TableHelper"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils, name: "Logging"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils, name: "Logging"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils, name: "Class"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils, name: "Class"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils, name: "Math"): __MS_game_MainStorage_Common_Utils_Math
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils, name: "Math"): __MS_game_MainStorage_Common_Utils_Math
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils, name: "UIHelper"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils, name: "UIHelper"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common_Utils, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common_Utils, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Common : SandboxNode
+---@field Bridge __MS_game_MainStorage_Common_Bridge
+---@field EventObject ModuleScript
+---@field Global ModuleScript
+---@field Utils __MS_game_MainStorage_Common_Utils
+---@field TimerMgr ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common, name: "Bridge"): __MS_game_MainStorage_Common_Bridge
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common, name: "Bridge"): __MS_game_MainStorage_Common_Bridge
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common, name: "EventObject"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common, name: "EventObject"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common, name: "Global"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common, name: "Global"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common, name: "Utils"): __MS_game_MainStorage_Common_Utils
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common, name: "Utils"): __MS_game_MainStorage_Common_Utils
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common, name: "TimerMgr"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common, name: "TimerMgr"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Common, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Common, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_StateMachine : SandboxNode
+---@field StateMachine ModuleScript
+---@field State ModuleScript
+---@field StateMachineEnum ModuleScript
+---@field SubStateMachine ModuleScript
+---@field Transition ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_StateMachine, name: "StateMachine"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_StateMachine, name: "StateMachine"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_StateMachine, name: "State"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_StateMachine, name: "State"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_StateMachine, name: "StateMachineEnum"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_StateMachine, name: "StateMachineEnum"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_StateMachine, name: "SubStateMachine"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_StateMachine, name: "SubStateMachine"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_StateMachine, name: "Transition"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_StateMachine, name: "Transition"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_StateMachine, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_StateMachine, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Container : SandboxNode
+---@field Stack ModuleScript
+---@field Queue ModuleScript
+---@field List ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Container, name: "Stack"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Container, name: "Stack"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Container, name: "Queue"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Container, name: "Queue"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Container, name: "List"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Container, name: "List"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Container, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Container, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Camera_ShakeController : ModuleScript
+---@field ShakeConfig ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Camera_ShakeController, name: "ShakeConfig"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Camera_ShakeController, name: "ShakeConfig"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Camera_ShakeController, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Camera_ShakeController, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Camera : SandboxNode
+---@field CameraController ModuleScript
+---@field ShakeController __MS_game_MainStorage_Camera_ShakeController
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Camera, name: "CameraController"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Camera, name: "CameraController"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Camera, name: "ShakeController"): __MS_game_MainStorage_Camera_ShakeController
+---@field WaitForChild fun(self: __MS_game_MainStorage_Camera, name: "ShakeController"): __MS_game_MainStorage_Camera_ShakeController
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Camera, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Camera, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Player : SandboxNode
+---@field PlayerController ModuleScript
+---@field StateMachineConfig ModuleScript
+---@field PlayerState ModuleScript
+---@field PlayerManager ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Player, name: "PlayerController"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Player, name: "PlayerController"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Player, name: "StateMachineConfig"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Player, name: "StateMachineConfig"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Player, name: "PlayerState"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Player, name: "PlayerState"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Player, name: "PlayerManager"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Player, name: "PlayerManager"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Player, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Player, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_PostProcessing : SandboxNode
+---@field PostProcessing ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_PostProcessing, name: "PostProcessing"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_PostProcessing, name: "PostProcessing"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_PostProcessing, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_PostProcessing, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIComponents : SandboxNode
+---@field SliderControl ModuleScript
+---@field TipsControl ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIComponents, name: "SliderControl"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIComponents, name: "SliderControl"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIComponents, name: "TipsControl"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIComponents, name: "TipsControl"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIComponents, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIComponents, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg : UIImage
+---@field Play_Joystick_handle UIImage
+---@field Play_Joystick_move_focus_bl UIImage
+---@field Play_Joystick_move_focus_br UIImage
+---@field Play_Joystick_move_focus_tl UIImage
+---@field Play_Joystick_move_focus_tr UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_handle"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_handle"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_bl"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_bl"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_br"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_br"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_tl"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_tl"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_tr"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: "Play_Joystick_move_focus_tr"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump : UIButton
+---@field IJump UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump, name: "IJump"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump, name: "IJump"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit : UIButton
+---@field IExit UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit, name: "IExit"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit, name: "IExit"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MainUI : UIRoot
+---@field BChat UIButton
+---@field waterMark UIImage
+---@field Play_Joystick_bg __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg
+---@field BJump __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump
+---@field BExit __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "BChat"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "BChat"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "waterMark"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "waterMark"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "Play_Joystick_bg"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "Play_Joystick_bg"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI_Play_Joystick_bg
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "BJump"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "BJump"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BJump
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "BExit"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: "BExit"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI_BExit
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MainUI, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top : UIImage
+---@field Text_Global UIButton
+---@field Tab_Focus UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top, name: "Text_Global"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top, name: "Text_Global"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top, name: "Tab_Focus"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top, name: "Tab_Focus"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup : UIImage
+---@field MessageInput UITextInput
+---@field Bg UIImage
+---@field Border UIImage
+---@field Placeholder UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "MessageInput"): UITextInput
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "MessageInput"): UITextInput
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "Bg"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "Bg"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "Border"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "Border"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "Placeholder"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: "Placeholder"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup : UIImage
+---@field Top __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top
+---@field MessageList UIList
+---@field MessageInputGroup __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup
+---@field Button_Send UIButton
+---@field Button_Close UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "Top"): __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "Top"): __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_Top
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "MessageList"): UIList
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "MessageList"): UIList
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "MessageInputGroup"): __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "MessageInputGroup"): __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup_MessageInputGroup
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "Button_Send"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "Button_Send"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "Button_Close"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: "Button_Close"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_Chat : UIRoot
+---@field Dimed UIImage
+---@field Popup __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat, name: "Dimed"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat, name: "Dimed"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat, name: "Popup"): __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat, name: "Popup"): __MS_game_MainStorage_UI_UIRootPrefab_Chat_Popup
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_Chat, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack : UIImage
+---@field soundSliderBtn UIButton
+---@field closeBtn UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack, name: "soundSliderBtn"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack, name: "soundSliderBtn"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack, name: "closeBtn"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack, name: "closeBtn"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_testUI : UIRoot
+---@field soundSliderTrack __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI, name: "soundSliderTrack"): __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI, name: "soundSliderTrack"): __MS_game_MainStorage_UI_UIRootPrefab_testUI_soundSliderTrack
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testUI, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout : UIList
+---@field TPrintContent UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout, name: "TPrintContent"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout, name: "TPrintContent"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel : UIPanel
+---@field BCloseUI UIButton
+---@field BSafeSocket UIButton
+---@field BReadCloud UIButton
+---@field BWriteCloud UIButton
+---@field BGetSafe UIButton
+---@field UIListLayout __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BCloseUI"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BCloseUI"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BSafeSocket"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BSafeSocket"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BReadCloud"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BReadCloud"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BWriteCloud"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BWriteCloud"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BGetSafe"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "BGetSafe"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "UIListLayout"): __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: "UIListLayout"): __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel_UIListLayout
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_testCloud : UIRoot
+---@field SceneUIPanel __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud, name: "SceneUIPanel"): __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud, name: "SceneUIPanel"): __MS_game_MainStorage_UI_UIRootPrefab_testCloud_SceneUIPanel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_testCloud, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL : UIImage
+---@field PlayerName UITextLabel
+---@field Time UITextLabel
+---@field Content UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: "PlayerName"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: "PlayerName"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: "Time"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: "Time"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: "Content"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: "Content"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL : UIImage
+---@field MessageL __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL
+---@field MessageAvaterL UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL, name: "MessageL"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL, name: "MessageL"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL_MessageL
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL, name: "MessageAvaterL"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL, name: "MessageAvaterL"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR : UIImage
+---@field PlayerName UITextLabel
+---@field Time UITextLabel
+---@field Content UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: "PlayerName"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: "PlayerName"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: "Time"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: "Time"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: "Content"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: "Content"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR : UIImage
+---@field MessageR __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR
+---@field MessageAvaterR UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR, name: "MessageR"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR, name: "MessageR"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR_MessageR
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR, name: "MessageAvaterR"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR, name: "MessageAvaterR"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefab : SandboxNode
+---@field MainUI __MS_game_MainStorage_UI_UIRootPrefab_MainUI
+---@field Chat __MS_game_MainStorage_UI_UIRootPrefab_Chat
+---@field testUI __MS_game_MainStorage_UI_UIRootPrefab_testUI
+---@field testCloud __MS_game_MainStorage_UI_UIRootPrefab_testCloud
+---@field MessageBodyL __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL
+---@field MessageBodyR __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "MainUI"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "MainUI"): __MS_game_MainStorage_UI_UIRootPrefab_MainUI
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "Chat"): __MS_game_MainStorage_UI_UIRootPrefab_Chat
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "Chat"): __MS_game_MainStorage_UI_UIRootPrefab_Chat
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "testUI"): __MS_game_MainStorage_UI_UIRootPrefab_testUI
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "testUI"): __MS_game_MainStorage_UI_UIRootPrefab_testUI
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "testCloud"): __MS_game_MainStorage_UI_UIRootPrefab_testCloud
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "testCloud"): __MS_game_MainStorage_UI_UIRootPrefab_testCloud
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "MessageBodyL"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "MessageBodyL"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyL
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "MessageBodyR"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: "MessageBodyR"): __MS_game_MainStorage_UI_UIRootPrefab_MessageBodyR
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefab, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI_UIRootPrefabFunctionality : SandboxNode
+---@field MainUI ModuleScript
+---@field testUI ModuleScript
+---@field testCloud ModuleScript
+---@field Chat ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "MainUI"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "MainUI"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "testUI"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "testUI"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "testCloud"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "testCloud"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "Chat"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: "Chat"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI_UIRootPrefabFunctionality, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_UI : SandboxNode
+---@field UIManager ModuleScript
+---@field UIRoot ModuleScript
+---@field UIRootFunctionality ModuleScript
+---@field UIComponents __MS_game_MainStorage_UI_UIComponents
+---@field UIRootPrefab __MS_game_MainStorage_UI_UIRootPrefab
+---@field UIRootPrefabFunctionality __MS_game_MainStorage_UI_UIRootPrefabFunctionality
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI, name: "UIManager"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI, name: "UIManager"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI, name: "UIRoot"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI, name: "UIRoot"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI, name: "UIRootFunctionality"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI, name: "UIRootFunctionality"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI, name: "UIComponents"): __MS_game_MainStorage_UI_UIComponents
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI, name: "UIComponents"): __MS_game_MainStorage_UI_UIComponents
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI, name: "UIRootPrefab"): __MS_game_MainStorage_UI_UIRootPrefab
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI, name: "UIRootPrefab"): __MS_game_MainStorage_UI_UIRootPrefab
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI, name: "UIRootPrefabFunctionality"): __MS_game_MainStorage_UI_UIRootPrefabFunctionality
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI, name: "UIRootPrefabFunctionality"): __MS_game_MainStorage_UI_UIRootPrefabFunctionality
+---@field FindFirstChild fun(self: __MS_game_MainStorage_UI, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_UI, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Actor : SandboxNode
+---@field ActorBase ModuleScript
+---@field ActorComponent ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Actor, name: "ActorBase"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Actor, name: "ActorBase"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Actor, name: "ActorComponent"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage_Actor, name: "ActorComponent"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Actor, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Actor, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup_Top : UIImage
+---@field Text_Global UIButton
+---@field Tab_Focus UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_Top, name: "Text_Global"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_Top, name: "Text_Global"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_Top, name: "Tab_Focus"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_Top, name: "Tab_Focus"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_Top, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_Top, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL : UIImage
+---@field Name UITextLabel
+---@field Time UITextLabel
+---@field Content UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: "Name"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: "Name"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: "Time"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: "Time"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: "Content"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: "Content"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL : UIImage
+---@field MessageL __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL
+---@field MessageAvaterL UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL, name: "MessageL"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL, name: "MessageL"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL_MessageL
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL, name: "MessageAvaterL"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL, name: "MessageAvaterL"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR : UIImage
+---@field Name UITextLabel
+---@field Time UITextLabel
+---@field Content UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: "Name"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: "Name"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: "Time"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: "Time"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: "Content"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: "Content"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR : UIImage
+---@field MessageR __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR
+---@field MessageAvaterR UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR, name: "MessageR"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR, name: "MessageR"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR_MessageR
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR, name: "MessageAvaterR"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR, name: "MessageAvaterR"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup_MessageList : UIList
+---@field MessageBodyL __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL
+---@field MessageBodyR __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList, name: "MessageBodyL"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList, name: "MessageBodyL"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyL
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList, name: "MessageBodyR"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList, name: "MessageBodyR"): __MS_game_MainStorage_Chat123_Popup_MessageList_MessageBodyR
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageList, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup_MessageInputGroup : UIImage
+---@field MessageInput UITextInput
+---@field Bg UIImage
+---@field Border UIImage
+---@field Placeholder UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "MessageInput"): UITextInput
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "MessageInput"): UITextInput
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "Bg"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "Bg"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "Border"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "Border"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "Placeholder"): UITextLabel
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: "Placeholder"): UITextLabel
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup_MessageInputGroup, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123_Popup : UIImage
+---@field Top __MS_game_MainStorage_Chat123_Popup_Top
+---@field MessageList __MS_game_MainStorage_Chat123_Popup_MessageList
+---@field MessageInputGroup __MS_game_MainStorage_Chat123_Popup_MessageInputGroup
+---@field Button_Send UIButton
+---@field Button_Close UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "Top"): __MS_game_MainStorage_Chat123_Popup_Top
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "Top"): __MS_game_MainStorage_Chat123_Popup_Top
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "MessageList"): __MS_game_MainStorage_Chat123_Popup_MessageList
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "MessageList"): __MS_game_MainStorage_Chat123_Popup_MessageList
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "MessageInputGroup"): __MS_game_MainStorage_Chat123_Popup_MessageInputGroup
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "MessageInputGroup"): __MS_game_MainStorage_Chat123_Popup_MessageInputGroup
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "Button_Send"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "Button_Send"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "Button_Close"): UIButton
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: "Button_Close"): UIButton
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123_Popup, name: string): SandboxNode
+
+---@class __MS_game_MainStorage_Chat123 : UIRoot
+---@field Dimed UIImage
+---@field Popup __MS_game_MainStorage_Chat123_Popup
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123, name: "Dimed"): UIImage
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123, name: "Dimed"): UIImage
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123, name: "Popup"): __MS_game_MainStorage_Chat123_Popup
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123, name: "Popup"): __MS_game_MainStorage_Chat123_Popup
+---@field FindFirstChild fun(self: __MS_game_MainStorage_Chat123, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage_Chat123, name: string): SandboxNode
+
+---@class __MS_game_MainStorage : MainStorage
+---@field Common __MS_game_MainStorage_Common
+---@field StateMachine __MS_game_MainStorage_StateMachine
+---@field Container __MS_game_MainStorage_Container
+---@field Camera __MS_game_MainStorage_Camera
+---@field Player __MS_game_MainStorage_Player
+---@field PostProcessing __MS_game_MainStorage_PostProcessing
+---@field UI __MS_game_MainStorage_UI
+---@field Actor __MS_game_MainStorage_Actor
+---@field Chat123 __MS_game_MainStorage_Chat123
+---@field ChatManager ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "Common"): __MS_game_MainStorage_Common
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "Common"): __MS_game_MainStorage_Common
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "StateMachine"): __MS_game_MainStorage_StateMachine
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "StateMachine"): __MS_game_MainStorage_StateMachine
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "Container"): __MS_game_MainStorage_Container
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "Container"): __MS_game_MainStorage_Container
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "Camera"): __MS_game_MainStorage_Camera
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "Camera"): __MS_game_MainStorage_Camera
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "Player"): __MS_game_MainStorage_Player
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "Player"): __MS_game_MainStorage_Player
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "PostProcessing"): __MS_game_MainStorage_PostProcessing
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "PostProcessing"): __MS_game_MainStorage_PostProcessing
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "UI"): __MS_game_MainStorage_UI
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "UI"): __MS_game_MainStorage_UI
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "Actor"): __MS_game_MainStorage_Actor
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "Actor"): __MS_game_MainStorage_Actor
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "Chat123"): __MS_game_MainStorage_Chat123
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "Chat123"): __MS_game_MainStorage_Chat123
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: "ChatManager"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: "ChatManager"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_MainStorage, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_MainStorage, name: string): SandboxNode
+
+---@class __MS_game_StartPlayer_StarterPlayerScripts : StarterPlayerScripts
+---@field StartInit LocalScript
+---@field ClientInit ModuleScript
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_StarterPlayerScripts, name: "StartInit"): LocalScript
+---@field WaitForChild fun(self: __MS_game_StartPlayer_StarterPlayerScripts, name: "StartInit"): LocalScript
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_StarterPlayerScripts, name: "ClientInit"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_StartPlayer_StarterPlayerScripts, name: "ClientInit"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_StarterPlayerScripts, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StartPlayer_StarterPlayerScripts, name: string): SandboxNode
+
+---@class __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup : AvatarGroupPart
+---@field BODY AvatarPart
+---@field HEAD AvatarPart
+---@field FACE AvatarPart
+---@field FACE_ORNAMENT AvatarPart
+---@field JACKET AvatarPart
+---@field HAND_ORNAMENT AvatarPart
+---@field TROUSERS AvatarPart
+---@field SHOE AvatarPart
+---@field BACK_ORNAMENT AvatarPart
+---@field FOOTPRINT AvatarPart
+---@field SKIN AvatarPart
+---@field RIGHT_HAND AvatarPart
+---@field RIGHT_SHOE AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "BODY"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "BODY"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "HEAD"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "HEAD"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "FACE"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "FACE"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "FACE_ORNAMENT"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "FACE_ORNAMENT"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "JACKET"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "JACKET"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "HAND_ORNAMENT"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "HAND_ORNAMENT"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "TROUSERS"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "TROUSERS"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "SHOE"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "SHOE"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "BACK_ORNAMENT"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "BACK_ORNAMENT"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "FOOTPRINT"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "FOOTPRINT"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "SKIN"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "SKIN"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "RIGHT_HAND"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "RIGHT_HAND"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "RIGHT_SHOE"): AvatarPart
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: "RIGHT_SHOE"): AvatarPart
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup, name: string): SandboxNode
+
+---@class __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup : OnlyOneBehaviorGroup
+---@field SpawnBehavior BehaviorItem
+---@field AliveBehavior BehaviorItem
+---@field DeadBehavior BehaviorItem
+---@field ReSpawnBehavior BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "SpawnBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "SpawnBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "AliveBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "AliveBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "DeadBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "DeadBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "ReSpawnBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: "ReSpawnBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup, name: string): SandboxNode
+
+---@class __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup : OnlyOneBehaviorGroup
+---@field IdleBehavior BehaviorItem
+---@field WalkBehavior BehaviorItem
+---@field JumpBehavior BehaviorItem
+---@field DropBehavior BehaviorItem
+---@field FlyBehavior BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "IdleBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "IdleBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "WalkBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "WalkBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "JumpBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "JumpBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "DropBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "DropBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "FlyBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: "FlyBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup, name: string): SandboxNode
+
+---@class __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup : CommonBehaviorGroup
+---@field StandUpBehavior BehaviorItem
+---@field SitDownBehavior BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup, name: "StandUpBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup, name: "StandUpBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup, name: "SitDownBehavior"): BehaviorItem
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup, name: "SitDownBehavior"): BehaviorItem
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup, name: string): SandboxNode
+
+---@class __MS_game_StartPlayer_PlayerActorTemplate : Actor
+---@field AvatarPartGroup __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup
+---@field LivingGroup __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup
+---@field MoveGroup __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup
+---@field InteractGroup __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup
+---@field LegacyAnimation LegacyAnimation
+---@field Animator Animator
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "AvatarPartGroup"): __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "AvatarPartGroup"): __MS_game_StartPlayer_PlayerActorTemplate_AvatarPartGroup
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "LivingGroup"): __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "LivingGroup"): __MS_game_StartPlayer_PlayerActorTemplate_LivingGroup
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "MoveGroup"): __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "MoveGroup"): __MS_game_StartPlayer_PlayerActorTemplate_MoveGroup
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "InteractGroup"): __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "InteractGroup"): __MS_game_StartPlayer_PlayerActorTemplate_InteractGroup
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "LegacyAnimation"): LegacyAnimation
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "LegacyAnimation"): LegacyAnimation
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "Animator"): Animator
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: "Animator"): Animator
+---@field FindFirstChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StartPlayer_PlayerActorTemplate, name: string): SandboxNode
+
+---@class __MS_game_StartPlayer : StartPlayer
+---@field StarterCharacterScripts StarterCharacterScripts
+---@field StarterPlayerScripts __MS_game_StartPlayer_StarterPlayerScripts
+---@field PlayerActorTemplate __MS_game_StartPlayer_PlayerActorTemplate
+---@field PlayerActorTemplate2D Actor2D
+---@field FindFirstChild fun(self: __MS_game_StartPlayer, name: "StarterCharacterScripts"): StarterCharacterScripts
+---@field WaitForChild fun(self: __MS_game_StartPlayer, name: "StarterCharacterScripts"): StarterCharacterScripts
+---@field FindFirstChild fun(self: __MS_game_StartPlayer, name: "StarterPlayerScripts"): __MS_game_StartPlayer_StarterPlayerScripts
+---@field WaitForChild fun(self: __MS_game_StartPlayer, name: "StarterPlayerScripts"): __MS_game_StartPlayer_StarterPlayerScripts
+---@field FindFirstChild fun(self: __MS_game_StartPlayer, name: "PlayerActorTemplate"): __MS_game_StartPlayer_PlayerActorTemplate
+---@field WaitForChild fun(self: __MS_game_StartPlayer, name: "PlayerActorTemplate"): __MS_game_StartPlayer_PlayerActorTemplate
+---@field FindFirstChild fun(self: __MS_game_StartPlayer, name: "PlayerActorTemplate2D"): Actor2D
+---@field WaitForChild fun(self: __MS_game_StartPlayer, name: "PlayerActorTemplate2D"): Actor2D
+---@field FindFirstChild fun(self: __MS_game_StartPlayer, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StartPlayer, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_BtnExit : UIButton
+---@field icon UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_BtnExit, name: "icon"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_BtnExit, name: "icon"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_BtnExit, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_BtnExit, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_TouchUIMain_Rocker : UIImage
+---@field RockerDot UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_TouchUIMain_Rocker, name: "RockerDot"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_TouchUIMain_Rocker, name: "RockerDot"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_TouchUIMain_Rocker, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_TouchUIMain_Rocker, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_TouchUIMain : UIRoot
+---@field Rocker __MS_game_StarterGui_TouchUIMain_Rocker
+---@field BtnJump UIButton
+---@field FindFirstChild fun(self: __MS_game_StarterGui_TouchUIMain, name: "Rocker"): __MS_game_StarterGui_TouchUIMain_Rocker
+---@field WaitForChild fun(self: __MS_game_StarterGui_TouchUIMain, name: "Rocker"): __MS_game_StarterGui_TouchUIMain_Rocker
+---@field FindFirstChild fun(self: __MS_game_StarterGui_TouchUIMain, name: "BtnJump"): UIButton
+---@field WaitForChild fun(self: __MS_game_StarterGui_TouchUIMain, name: "BtnJump"): UIButton
+---@field FindFirstChild fun(self: __MS_game_StarterGui_TouchUIMain, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_TouchUIMain, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_DefaultUIMain_BtnExit : UIButton
+---@field icon UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnExit, name: "icon"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnExit, name: "icon"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnExit, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnExit, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_DefaultUIMain_BtnChatFrame : UIButton
+---@field icon UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnChatFrame, name: "icon"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnChatFrame, name: "icon"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnChatFrame, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnChatFrame, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo : UIButton
+---@field icon UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo, name: "icon"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo, name: "icon"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_DefaultUIMain_BtnSetting : UIButton
+---@field icon UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnSetting, name: "icon"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnSetting, name: "icon"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnSetting, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnSetting, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_DefaultUIMain_BtnMicrophone : UIButton
+---@field icon UIImage
+---@field IconOff UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnMicrophone, name: "icon"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnMicrophone, name: "icon"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnMicrophone, name: "IconOff"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnMicrophone, name: "IconOff"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnMicrophone, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnMicrophone, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_DefaultUIMain_BtnHorn : UIButton
+---@field icon UIImage
+---@field IconOff UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnHorn, name: "icon"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnHorn, name: "icon"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnHorn, name: "IconOff"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnHorn, name: "IconOff"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnHorn, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain_BtnHorn, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_DefaultUIMain : UIRoot
+---@field BtnExit __MS_game_StarterGui_DefaultUIMain_BtnExit
+---@field BtnChatFrame __MS_game_StarterGui_DefaultUIMain_BtnChatFrame
+---@field BtnRoomInfo __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo
+---@field BtnSetting __MS_game_StarterGui_DefaultUIMain_BtnSetting
+---@field BtnMicrophone __MS_game_StarterGui_DefaultUIMain_BtnMicrophone
+---@field BtnHorn __MS_game_StarterGui_DefaultUIMain_BtnHorn
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnExit"): __MS_game_StarterGui_DefaultUIMain_BtnExit
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnExit"): __MS_game_StarterGui_DefaultUIMain_BtnExit
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnChatFrame"): __MS_game_StarterGui_DefaultUIMain_BtnChatFrame
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnChatFrame"): __MS_game_StarterGui_DefaultUIMain_BtnChatFrame
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnRoomInfo"): __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnRoomInfo"): __MS_game_StarterGui_DefaultUIMain_BtnRoomInfo
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnSetting"): __MS_game_StarterGui_DefaultUIMain_BtnSetting
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnSetting"): __MS_game_StarterGui_DefaultUIMain_BtnSetting
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnMicrophone"): __MS_game_StarterGui_DefaultUIMain_BtnMicrophone
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnMicrophone"): __MS_game_StarterGui_DefaultUIMain_BtnMicrophone
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnHorn"): __MS_game_StarterGui_DefaultUIMain_BtnHorn
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: "BtnHorn"): __MS_game_StarterGui_DefaultUIMain_BtnHorn
+---@field FindFirstChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_DefaultUIMain, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_LoadingUIMain_bg_progress : UIImage
+---@field MaskUIImage UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg_progress, name: "MaskUIImage"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg_progress, name: "MaskUIImage"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg_progress, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg_progress, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_LoadingUIMain_bg : UIImage
+---@field progressbarbg UIImage
+---@field progress __MS_game_StarterGui_LoadingUIMain_bg_progress
+---@field FindFirstChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg, name: "progressbarbg"): UIImage
+---@field WaitForChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg, name: "progressbarbg"): UIImage
+---@field FindFirstChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg, name: "progress"): __MS_game_StarterGui_LoadingUIMain_bg_progress
+---@field WaitForChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg, name: "progress"): __MS_game_StarterGui_LoadingUIMain_bg_progress
+---@field FindFirstChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_LoadingUIMain_bg, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_LoadingUIMain : UIRoot
+---@field bg __MS_game_StarterGui_LoadingUIMain_bg
+---@field FindFirstChild fun(self: __MS_game_StarterGui_LoadingUIMain, name: "bg"): __MS_game_StarterGui_LoadingUIMain_bg
+---@field WaitForChild fun(self: __MS_game_StarterGui_LoadingUIMain, name: "bg"): __MS_game_StarterGui_LoadingUIMain_bg
+---@field FindFirstChild fun(self: __MS_game_StarterGui_LoadingUIMain, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_LoadingUIMain, name: string): SandboxNode
+
+---@class __MS_game_StarterGui_Sounds : SandboxNode
+---@field DefaultButtonSound Sound
+---@field DefaultButtonRelease Sound
+---@field FindFirstChild fun(self: __MS_game_StarterGui_Sounds, name: "DefaultButtonSound"): Sound
+---@field WaitForChild fun(self: __MS_game_StarterGui_Sounds, name: "DefaultButtonSound"): Sound
+---@field FindFirstChild fun(self: __MS_game_StarterGui_Sounds, name: "DefaultButtonRelease"): Sound
+---@field WaitForChild fun(self: __MS_game_StarterGui_Sounds, name: "DefaultButtonRelease"): Sound
+---@field FindFirstChild fun(self: __MS_game_StarterGui_Sounds, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui_Sounds, name: string): SandboxNode
+
+---@class __MS_game_StarterGui : StarterGui
+---@field BtnExit __MS_game_StarterGui_BtnExit
+---@field TouchUIMain __MS_game_StarterGui_TouchUIMain
+---@field DefaultUIMain __MS_game_StarterGui_DefaultUIMain
+---@field LoadingUIMain __MS_game_StarterGui_LoadingUIMain
+---@field Sounds __MS_game_StarterGui_Sounds
+---@field FindFirstChild fun(self: __MS_game_StarterGui, name: "BtnExit"): __MS_game_StarterGui_BtnExit
+---@field WaitForChild fun(self: __MS_game_StarterGui, name: "BtnExit"): __MS_game_StarterGui_BtnExit
+---@field FindFirstChild fun(self: __MS_game_StarterGui, name: "TouchUIMain"): __MS_game_StarterGui_TouchUIMain
+---@field WaitForChild fun(self: __MS_game_StarterGui, name: "TouchUIMain"): __MS_game_StarterGui_TouchUIMain
+---@field FindFirstChild fun(self: __MS_game_StarterGui, name: "DefaultUIMain"): __MS_game_StarterGui_DefaultUIMain
+---@field WaitForChild fun(self: __MS_game_StarterGui, name: "DefaultUIMain"): __MS_game_StarterGui_DefaultUIMain
+---@field FindFirstChild fun(self: __MS_game_StarterGui, name: "LoadingUIMain"): __MS_game_StarterGui_LoadingUIMain
+---@field WaitForChild fun(self: __MS_game_StarterGui, name: "LoadingUIMain"): __MS_game_StarterGui_LoadingUIMain
+---@field FindFirstChild fun(self: __MS_game_StarterGui, name: "Sounds"): __MS_game_StarterGui_Sounds
+---@field WaitForChild fun(self: __MS_game_StarterGui, name: "Sounds"): __MS_game_StarterGui_Sounds
+---@field FindFirstChild fun(self: __MS_game_StarterGui, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_StarterGui, name: string): SandboxNode
+
+---@class __MS_game_CustomConfigService : CustomConfigService
+---@field ConfigClassGroup SandboxNode
+---@field ConfigGroup SandboxNode
+---@field FindFirstChild fun(self: __MS_game_CustomConfigService, name: "ConfigClassGroup"): SandboxNode
+---@field WaitForChild fun(self: __MS_game_CustomConfigService, name: "ConfigClassGroup"): SandboxNode
+---@field FindFirstChild fun(self: __MS_game_CustomConfigService, name: "ConfigGroup"): SandboxNode
+---@field WaitForChild fun(self: __MS_game_CustomConfigService, name: "ConfigGroup"): SandboxNode
+---@field FindFirstChild fun(self: __MS_game_CustomConfigService, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_CustomConfigService, name: string): SandboxNode
+
+---@class __MS_game_ServerScriptService : ServerScriptService
+---@field ServerInit Script
+---@field FindFirstChild fun(self: __MS_game_ServerScriptService, name: "ServerInit"): Script
+---@field WaitForChild fun(self: __MS_game_ServerScriptService, name: "ServerInit"): Script
+---@field FindFirstChild fun(self: __MS_game_ServerScriptService, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_ServerScriptService, name: string): SandboxNode
+
+---@class __MS_game_ServerStorage : ServerStorage
+---@field CloudManager ModuleScript
+---@field FindFirstChild fun(self: __MS_game_ServerStorage, name: "CloudManager"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_ServerStorage, name: "CloudManager"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_ServerStorage, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_ServerStorage, name: string): SandboxNode
+
+---@class __MS_game_ReplicatorRoot : ReplicatorRoot
+---@field client SandboxNode
+---@field server SandboxNode
+---@field FindFirstChild fun(self: __MS_game_ReplicatorRoot, name: "client"): SandboxNode
+---@field WaitForChild fun(self: __MS_game_ReplicatorRoot, name: "client"): SandboxNode
+---@field FindFirstChild fun(self: __MS_game_ReplicatorRoot, name: "server"): SandboxNode
+---@field WaitForChild fun(self: __MS_game_ReplicatorRoot, name: "server"): SandboxNode
+---@field FindFirstChild fun(self: __MS_game_ReplicatorRoot, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_ReplicatorRoot, name: string): SandboxNode
+
+---@class __MS_game_PluginsService_test : PluginNode
+---@field Script Script
+---@field FindFirstChild fun(self: __MS_game_PluginsService_test, name: "Script"): Script
+---@field WaitForChild fun(self: __MS_game_PluginsService_test, name: "Script"): Script
+---@field FindFirstChild fun(self: __MS_game_PluginsService_test, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_PluginsService_test, name: string): SandboxNode
+
+---@class __MS_game_PluginsService_ministro_ministro : Script
+---@field dkjson ModuleScript
+---@field TimerMgr ModuleScript
+---@field FindFirstChild fun(self: __MS_game_PluginsService_ministro_ministro, name: "dkjson"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_PluginsService_ministro_ministro, name: "dkjson"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_PluginsService_ministro_ministro, name: "TimerMgr"): ModuleScript
+---@field WaitForChild fun(self: __MS_game_PluginsService_ministro_ministro, name: "TimerMgr"): ModuleScript
+---@field FindFirstChild fun(self: __MS_game_PluginsService_ministro_ministro, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_PluginsService_ministro_ministro, name: string): SandboxNode
+
+---@class __MS_game_PluginsService_ministro : PluginNode
+---@field ministro __MS_game_PluginsService_ministro_ministro
+---@field PluginAction PluginAction
+---@field FindFirstChild fun(self: __MS_game_PluginsService_ministro, name: "ministro"): __MS_game_PluginsService_ministro_ministro
+---@field WaitForChild fun(self: __MS_game_PluginsService_ministro, name: "ministro"): __MS_game_PluginsService_ministro_ministro
+---@field FindFirstChild fun(self: __MS_game_PluginsService_ministro, name: "PluginAction"): PluginAction
+---@field WaitForChild fun(self: __MS_game_PluginsService_ministro, name: "PluginAction"): PluginAction
+---@field FindFirstChild fun(self: __MS_game_PluginsService_ministro, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_PluginsService_ministro, name: string): SandboxNode
+
+---@class __MS_game_PluginsService : PluginsService
+---@field test __MS_game_PluginsService_test
+---@field ministro __MS_game_PluginsService_ministro
+---@field FindFirstChild fun(self: __MS_game_PluginsService, name: "test"): __MS_game_PluginsService_test
+---@field WaitForChild fun(self: __MS_game_PluginsService, name: "test"): __MS_game_PluginsService_test
+---@field FindFirstChild fun(self: __MS_game_PluginsService, name: "ministro"): __MS_game_PluginsService_ministro
+---@field WaitForChild fun(self: __MS_game_PluginsService, name: "ministro"): __MS_game_PluginsService_ministro
+---@field FindFirstChild fun(self: __MS_game_PluginsService, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_PluginsService, name: string): SandboxNode
+
+---@class __MS_game_WorkSpace_Environment : Environment
+---@field SkyLight SkyLight
+---@field Atmosphere Atmosphere
+---@field SkyDome SkyDome
+---@field SunLight SunLight
+---@field PostProcessing PostProcessing
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Environment, name: "SkyLight"): SkyLight
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Environment, name: "SkyLight"): SkyLight
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Environment, name: "Atmosphere"): Atmosphere
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Environment, name: "Atmosphere"): Atmosphere
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Environment, name: "SkyDome"): SkyDome
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Environment, name: "SkyDome"): SkyDome
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Environment, name: "SunLight"): SunLight
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Environment, name: "SunLight"): SunLight
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Environment, name: "PostProcessing"): PostProcessing
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Environment, name: "PostProcessing"): PostProcessing
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Environment, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Environment, name: string): SandboxNode
+
+---@class __MS_game_WorkSpace_Canvas : Canvas
+---@field Camera2D Camera2D
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Canvas, name: "Camera2D"): Camera2D
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Canvas, name: "Camera2D"): Camera2D
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_Canvas, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_WorkSpace_Canvas, name: string): SandboxNode
+
+---@class __MS_game_WorkSpace_RainParticles : EffectObject
+---@field WaterSplashEmitter EffectObject
+---@field WaterRingDrops EffectObject
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_RainParticles, name: "WaterSplashEmitter"): EffectObject
+---@field WaitForChild fun(self: __MS_game_WorkSpace_RainParticles, name: "WaterSplashEmitter"): EffectObject
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_RainParticles, name: "WaterRingDrops"): EffectObject
+---@field WaitForChild fun(self: __MS_game_WorkSpace_RainParticles, name: "WaterRingDrops"): EffectObject
+---@field FindFirstChild fun(self: __MS_game_WorkSpace_RainParticles, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_WorkSpace_RainParticles, name: string): SandboxNode
+
+---@class __MS_game_WorkSpace : WorkSpace
+---@field Camera Camera
+---@field Environment __MS_game_WorkSpace_Environment
+---@field SpawnLocation1 SpawnLocation
+---@field Canvas __MS_game_WorkSpace_Canvas
+---@field RainParticles __MS_game_WorkSpace_RainParticles
+---@field WaterPrefab Model
+---@field Smoke EffectObject
+---@field WatcherBoxEx WatcherBoxNodeEx
+---@field CustomNotify CustomNotify
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "Camera"): Camera
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "Camera"): Camera
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "Environment"): __MS_game_WorkSpace_Environment
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "Environment"): __MS_game_WorkSpace_Environment
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "SpawnLocation1"): SpawnLocation
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "SpawnLocation1"): SpawnLocation
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "Canvas"): __MS_game_WorkSpace_Canvas
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "Canvas"): __MS_game_WorkSpace_Canvas
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "RainParticles"): __MS_game_WorkSpace_RainParticles
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "RainParticles"): __MS_game_WorkSpace_RainParticles
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "WaterPrefab"): Model
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "WaterPrefab"): Model
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "Smoke"): EffectObject
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "Smoke"): EffectObject
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "WatcherBoxEx"): WatcherBoxNodeEx
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "WatcherBoxEx"): WatcherBoxNodeEx
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: "CustomNotify"): CustomNotify
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: "CustomNotify"): CustomNotify
+---@field FindFirstChild fun(self: __MS_game_WorkSpace, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game_WorkSpace, name: string): SandboxNode
+
+---@class __MS_game : GameNode
+---@field ContextActionService ContextActionService
+---@field UserInputService UserInputService
+---@field ConfigService ConfigService
+---@field LuaProfileService LuaProfileService
+---@field GameSetting GameSetting
+---@field MaterialService __MS_game_MaterialService
+---@field Localization SandboxLocalizationService
+---@field ScriptService ScriptServiceHost
+---@field SceneMgr SandboxSceneMgrService
+---@field AssetService AssetServiceHost
+---@field SandboxDebugHelper SandboxDebugHelper
+---@field MainStorage __MS_game_MainStorage
+---@field InitStorage InitStorage
+---@field Loaded LoadedService
+---@field ScriptContext ScriptContext
+---@field StarterPack StarterPack
+---@field RunService RunService
+---@field SpawnService SpawnService
+---@field Teams Teams
+---@field PostEffectService PostEffectService
+---@field MouseService MouseService
+---@field Players Players
+---@field StartPlayer __MS_game_StartPlayer
+---@field StarterGui __MS_game_StarterGui
+---@field WorldService WorldService
+---@field Chat Chat
+---@field TeleportService TeleportService
+---@field FriendsService FriendsService
+---@field SoundService SoundService
+---@field VoiceChatService VoiceChatService
+---@field VoiceChatRemoteService VoiceChatRemoteService
+---@field TweenService TweenService
+---@field PhysXService PhysXService
+---@field HttpService SandboxHttpService
+---@field NetService NetService
+---@field LocalFirst LocalFirst
+---@field CollectionService CollectionService
+---@field CloudService CloudService
+---@field ContentService ContentService
+---@field CoreUi CoreUI
+---@field CloudAnnouncementService CloudAnnouncementService
+---@field TalkService TalkService
+---@field DeveloperStoreService DeveloperStoreService
+---@field PlayersRemoteService SandBoxPlayersRemoteService
+---@field AnalyticsService AnalyticsService
+---@field Setting Setting
+---@field CloudServerConfigService CloudServerConfigService
+---@field FriendInviteService FriendInviteService
+---@field FriendInviteRemoteService FriendInviteRemoteService
+---@field AdvertisementService AdvertisementService
+---@field UtilService UtilService
+---@field MeshCacheManegerService MeshCacheMananger
+---@field UIManageService UIManageService
+---@field OnlineService OnlineService
+---@field DebuggerLogRemoteService DebuggerLogRemoteService
+---@field DebuggerLogService DebuggerLogService
+---@field CustomConfigService __MS_game_CustomConfigService
+---@field AIService AIService
+---@field ServerScriptService __MS_game_ServerScriptService
+---@field ServerStorage __MS_game_ServerStorage
+---@field SelecterService SelecterService
+---@field ReplicatorRoot __MS_game_ReplicatorRoot
+---@field BlockService BlockService
+---@field NavigationService NavigationService
+---@field Navigation2DService Navigation2DService
+---@field PluginsService __MS_game_PluginsService
+---@field WorkSpace __MS_game_WorkSpace
+---@field legacyActorRoot LegacyActorRoot
+---@field CombineManegerService CombineManeger
+---@field FindFirstChild fun(self: __MS_game, name: "ContextActionService"): ContextActionService
+---@field WaitForChild fun(self: __MS_game, name: "ContextActionService"): ContextActionService
+---@field GetService fun(self: __MS_game, name: "ContextActionService"): ContextActionService
+---@field FindFirstChild fun(self: __MS_game, name: "UserInputService"): UserInputService
+---@field WaitForChild fun(self: __MS_game, name: "UserInputService"): UserInputService
+---@field GetService fun(self: __MS_game, name: "UserInputService"): UserInputService
+---@field FindFirstChild fun(self: __MS_game, name: "ConfigService"): ConfigService
+---@field WaitForChild fun(self: __MS_game, name: "ConfigService"): ConfigService
+---@field GetService fun(self: __MS_game, name: "ConfigService"): ConfigService
+---@field FindFirstChild fun(self: __MS_game, name: "LuaProfileService"): LuaProfileService
+---@field WaitForChild fun(self: __MS_game, name: "LuaProfileService"): LuaProfileService
+---@field GetService fun(self: __MS_game, name: "LuaProfileService"): LuaProfileService
+---@field FindFirstChild fun(self: __MS_game, name: "GameSetting"): GameSetting
+---@field WaitForChild fun(self: __MS_game, name: "GameSetting"): GameSetting
+---@field GetService fun(self: __MS_game, name: "GameSetting"): GameSetting
+---@field FindFirstChild fun(self: __MS_game, name: "MaterialService"): __MS_game_MaterialService
+---@field WaitForChild fun(self: __MS_game, name: "MaterialService"): __MS_game_MaterialService
+---@field GetService fun(self: __MS_game, name: "MaterialService"): __MS_game_MaterialService
+---@field FindFirstChild fun(self: __MS_game, name: "Localization"): SandboxLocalizationService
+---@field WaitForChild fun(self: __MS_game, name: "Localization"): SandboxLocalizationService
+---@field GetService fun(self: __MS_game, name: "Localization"): SandboxLocalizationService
+---@field FindFirstChild fun(self: __MS_game, name: "ScriptService"): ScriptServiceHost
+---@field WaitForChild fun(self: __MS_game, name: "ScriptService"): ScriptServiceHost
+---@field GetService fun(self: __MS_game, name: "ScriptService"): ScriptServiceHost
+---@field FindFirstChild fun(self: __MS_game, name: "SceneMgr"): SandboxSceneMgrService
+---@field WaitForChild fun(self: __MS_game, name: "SceneMgr"): SandboxSceneMgrService
+---@field GetService fun(self: __MS_game, name: "SceneMgr"): SandboxSceneMgrService
+---@field FindFirstChild fun(self: __MS_game, name: "AssetService"): AssetServiceHost
+---@field WaitForChild fun(self: __MS_game, name: "AssetService"): AssetServiceHost
+---@field GetService fun(self: __MS_game, name: "AssetService"): AssetServiceHost
+---@field FindFirstChild fun(self: __MS_game, name: "SandboxDebugHelper"): SandboxDebugHelper
+---@field WaitForChild fun(self: __MS_game, name: "SandboxDebugHelper"): SandboxDebugHelper
+---@field GetService fun(self: __MS_game, name: "SandboxDebugHelper"): SandboxDebugHelper
+---@field FindFirstChild fun(self: __MS_game, name: "MainStorage"): __MS_game_MainStorage
+---@field WaitForChild fun(self: __MS_game, name: "MainStorage"): __MS_game_MainStorage
+---@field GetService fun(self: __MS_game, name: "MainStorage"): __MS_game_MainStorage
+---@field FindFirstChild fun(self: __MS_game, name: "InitStorage"): InitStorage
+---@field WaitForChild fun(self: __MS_game, name: "InitStorage"): InitStorage
+---@field GetService fun(self: __MS_game, name: "InitStorage"): InitStorage
+---@field FindFirstChild fun(self: __MS_game, name: "Loaded"): LoadedService
+---@field WaitForChild fun(self: __MS_game, name: "Loaded"): LoadedService
+---@field GetService fun(self: __MS_game, name: "Loaded"): LoadedService
+---@field FindFirstChild fun(self: __MS_game, name: "ScriptContext"): ScriptContext
+---@field WaitForChild fun(self: __MS_game, name: "ScriptContext"): ScriptContext
+---@field GetService fun(self: __MS_game, name: "ScriptContext"): ScriptContext
+---@field FindFirstChild fun(self: __MS_game, name: "StarterPack"): StarterPack
+---@field WaitForChild fun(self: __MS_game, name: "StarterPack"): StarterPack
+---@field GetService fun(self: __MS_game, name: "StarterPack"): StarterPack
+---@field FindFirstChild fun(self: __MS_game, name: "RunService"): RunService
+---@field WaitForChild fun(self: __MS_game, name: "RunService"): RunService
+---@field GetService fun(self: __MS_game, name: "RunService"): RunService
+---@field FindFirstChild fun(self: __MS_game, name: "SpawnService"): SpawnService
+---@field WaitForChild fun(self: __MS_game, name: "SpawnService"): SpawnService
+---@field GetService fun(self: __MS_game, name: "SpawnService"): SpawnService
+---@field FindFirstChild fun(self: __MS_game, name: "Teams"): Teams
+---@field WaitForChild fun(self: __MS_game, name: "Teams"): Teams
+---@field GetService fun(self: __MS_game, name: "Teams"): Teams
+---@field FindFirstChild fun(self: __MS_game, name: "PostEffectService"): PostEffectService
+---@field WaitForChild fun(self: __MS_game, name: "PostEffectService"): PostEffectService
+---@field GetService fun(self: __MS_game, name: "PostEffectService"): PostEffectService
+---@field FindFirstChild fun(self: __MS_game, name: "MouseService"): MouseService
+---@field WaitForChild fun(self: __MS_game, name: "MouseService"): MouseService
+---@field GetService fun(self: __MS_game, name: "MouseService"): MouseService
+---@field FindFirstChild fun(self: __MS_game, name: "Players"): Players
+---@field WaitForChild fun(self: __MS_game, name: "Players"): Players
+---@field GetService fun(self: __MS_game, name: "Players"): Players
+---@field FindFirstChild fun(self: __MS_game, name: "StartPlayer"): __MS_game_StartPlayer
+---@field WaitForChild fun(self: __MS_game, name: "StartPlayer"): __MS_game_StartPlayer
+---@field GetService fun(self: __MS_game, name: "StartPlayer"): __MS_game_StartPlayer
+---@field FindFirstChild fun(self: __MS_game, name: "StarterGui"): __MS_game_StarterGui
+---@field WaitForChild fun(self: __MS_game, name: "StarterGui"): __MS_game_StarterGui
+---@field GetService fun(self: __MS_game, name: "StarterGui"): __MS_game_StarterGui
+---@field FindFirstChild fun(self: __MS_game, name: "WorldService"): WorldService
+---@field WaitForChild fun(self: __MS_game, name: "WorldService"): WorldService
+---@field GetService fun(self: __MS_game, name: "WorldService"): WorldService
+---@field FindFirstChild fun(self: __MS_game, name: "Chat"): Chat
+---@field WaitForChild fun(self: __MS_game, name: "Chat"): Chat
+---@field GetService fun(self: __MS_game, name: "Chat"): Chat
+---@field FindFirstChild fun(self: __MS_game, name: "TeleportService"): TeleportService
+---@field WaitForChild fun(self: __MS_game, name: "TeleportService"): TeleportService
+---@field GetService fun(self: __MS_game, name: "TeleportService"): TeleportService
+---@field FindFirstChild fun(self: __MS_game, name: "FriendsService"): FriendsService
+---@field WaitForChild fun(self: __MS_game, name: "FriendsService"): FriendsService
+---@field GetService fun(self: __MS_game, name: "FriendsService"): FriendsService
+---@field FindFirstChild fun(self: __MS_game, name: "SoundService"): SoundService
+---@field WaitForChild fun(self: __MS_game, name: "SoundService"): SoundService
+---@field GetService fun(self: __MS_game, name: "SoundService"): SoundService
+---@field FindFirstChild fun(self: __MS_game, name: "VoiceChatService"): VoiceChatService
+---@field WaitForChild fun(self: __MS_game, name: "VoiceChatService"): VoiceChatService
+---@field GetService fun(self: __MS_game, name: "VoiceChatService"): VoiceChatService
+---@field FindFirstChild fun(self: __MS_game, name: "VoiceChatRemoteService"): VoiceChatRemoteService
+---@field WaitForChild fun(self: __MS_game, name: "VoiceChatRemoteService"): VoiceChatRemoteService
+---@field GetService fun(self: __MS_game, name: "VoiceChatRemoteService"): VoiceChatRemoteService
+---@field FindFirstChild fun(self: __MS_game, name: "TweenService"): TweenService
+---@field WaitForChild fun(self: __MS_game, name: "TweenService"): TweenService
+---@field GetService fun(self: __MS_game, name: "TweenService"): TweenService
+---@field FindFirstChild fun(self: __MS_game, name: "PhysXService"): PhysXService
+---@field WaitForChild fun(self: __MS_game, name: "PhysXService"): PhysXService
+---@field GetService fun(self: __MS_game, name: "PhysXService"): PhysXService
+---@field FindFirstChild fun(self: __MS_game, name: "HttpService"): SandboxHttpService
+---@field WaitForChild fun(self: __MS_game, name: "HttpService"): SandboxHttpService
+---@field GetService fun(self: __MS_game, name: "HttpService"): SandboxHttpService
+---@field FindFirstChild fun(self: __MS_game, name: "NetService"): NetService
+---@field WaitForChild fun(self: __MS_game, name: "NetService"): NetService
+---@field GetService fun(self: __MS_game, name: "NetService"): NetService
+---@field FindFirstChild fun(self: __MS_game, name: "LocalFirst"): LocalFirst
+---@field WaitForChild fun(self: __MS_game, name: "LocalFirst"): LocalFirst
+---@field GetService fun(self: __MS_game, name: "LocalFirst"): LocalFirst
+---@field FindFirstChild fun(self: __MS_game, name: "CollectionService"): CollectionService
+---@field WaitForChild fun(self: __MS_game, name: "CollectionService"): CollectionService
+---@field GetService fun(self: __MS_game, name: "CollectionService"): CollectionService
+---@field FindFirstChild fun(self: __MS_game, name: "CloudService"): CloudService
+---@field WaitForChild fun(self: __MS_game, name: "CloudService"): CloudService
+---@field GetService fun(self: __MS_game, name: "CloudService"): CloudService
+---@field FindFirstChild fun(self: __MS_game, name: "ContentService"): ContentService
+---@field WaitForChild fun(self: __MS_game, name: "ContentService"): ContentService
+---@field GetService fun(self: __MS_game, name: "ContentService"): ContentService
+---@field FindFirstChild fun(self: __MS_game, name: "CoreUi"): CoreUI
+---@field WaitForChild fun(self: __MS_game, name: "CoreUi"): CoreUI
+---@field GetService fun(self: __MS_game, name: "CoreUi"): CoreUI
+---@field FindFirstChild fun(self: __MS_game, name: "CloudAnnouncementService"): CloudAnnouncementService
+---@field WaitForChild fun(self: __MS_game, name: "CloudAnnouncementService"): CloudAnnouncementService
+---@field GetService fun(self: __MS_game, name: "CloudAnnouncementService"): CloudAnnouncementService
+---@field FindFirstChild fun(self: __MS_game, name: "TalkService"): TalkService
+---@field WaitForChild fun(self: __MS_game, name: "TalkService"): TalkService
+---@field GetService fun(self: __MS_game, name: "TalkService"): TalkService
+---@field FindFirstChild fun(self: __MS_game, name: "DeveloperStoreService"): DeveloperStoreService
+---@field WaitForChild fun(self: __MS_game, name: "DeveloperStoreService"): DeveloperStoreService
+---@field GetService fun(self: __MS_game, name: "DeveloperStoreService"): DeveloperStoreService
+---@field FindFirstChild fun(self: __MS_game, name: "PlayersRemoteService"): SandBoxPlayersRemoteService
+---@field WaitForChild fun(self: __MS_game, name: "PlayersRemoteService"): SandBoxPlayersRemoteService
+---@field GetService fun(self: __MS_game, name: "PlayersRemoteService"): SandBoxPlayersRemoteService
+---@field FindFirstChild fun(self: __MS_game, name: "AnalyticsService"): AnalyticsService
+---@field WaitForChild fun(self: __MS_game, name: "AnalyticsService"): AnalyticsService
+---@field GetService fun(self: __MS_game, name: "AnalyticsService"): AnalyticsService
+---@field FindFirstChild fun(self: __MS_game, name: "Setting"): Setting
+---@field WaitForChild fun(self: __MS_game, name: "Setting"): Setting
+---@field GetService fun(self: __MS_game, name: "Setting"): Setting
+---@field FindFirstChild fun(self: __MS_game, name: "CloudServerConfigService"): CloudServerConfigService
+---@field WaitForChild fun(self: __MS_game, name: "CloudServerConfigService"): CloudServerConfigService
+---@field GetService fun(self: __MS_game, name: "CloudServerConfigService"): CloudServerConfigService
+---@field FindFirstChild fun(self: __MS_game, name: "FriendInviteService"): FriendInviteService
+---@field WaitForChild fun(self: __MS_game, name: "FriendInviteService"): FriendInviteService
+---@field GetService fun(self: __MS_game, name: "FriendInviteService"): FriendInviteService
+---@field FindFirstChild fun(self: __MS_game, name: "FriendInviteRemoteService"): FriendInviteRemoteService
+---@field WaitForChild fun(self: __MS_game, name: "FriendInviteRemoteService"): FriendInviteRemoteService
+---@field GetService fun(self: __MS_game, name: "FriendInviteRemoteService"): FriendInviteRemoteService
+---@field FindFirstChild fun(self: __MS_game, name: "AdvertisementService"): AdvertisementService
+---@field WaitForChild fun(self: __MS_game, name: "AdvertisementService"): AdvertisementService
+---@field GetService fun(self: __MS_game, name: "AdvertisementService"): AdvertisementService
+---@field FindFirstChild fun(self: __MS_game, name: "UtilService"): UtilService
+---@field WaitForChild fun(self: __MS_game, name: "UtilService"): UtilService
+---@field GetService fun(self: __MS_game, name: "UtilService"): UtilService
+---@field FindFirstChild fun(self: __MS_game, name: "MeshCacheManegerService"): MeshCacheMananger
+---@field WaitForChild fun(self: __MS_game, name: "MeshCacheManegerService"): MeshCacheMananger
+---@field GetService fun(self: __MS_game, name: "MeshCacheManegerService"): MeshCacheMananger
+---@field FindFirstChild fun(self: __MS_game, name: "UIManageService"): UIManageService
+---@field WaitForChild fun(self: __MS_game, name: "UIManageService"): UIManageService
+---@field GetService fun(self: __MS_game, name: "UIManageService"): UIManageService
+---@field FindFirstChild fun(self: __MS_game, name: "OnlineService"): OnlineService
+---@field WaitForChild fun(self: __MS_game, name: "OnlineService"): OnlineService
+---@field GetService fun(self: __MS_game, name: "OnlineService"): OnlineService
+---@field FindFirstChild fun(self: __MS_game, name: "DebuggerLogRemoteService"): DebuggerLogRemoteService
+---@field WaitForChild fun(self: __MS_game, name: "DebuggerLogRemoteService"): DebuggerLogRemoteService
+---@field GetService fun(self: __MS_game, name: "DebuggerLogRemoteService"): DebuggerLogRemoteService
+---@field FindFirstChild fun(self: __MS_game, name: "DebuggerLogService"): DebuggerLogService
+---@field WaitForChild fun(self: __MS_game, name: "DebuggerLogService"): DebuggerLogService
+---@field GetService fun(self: __MS_game, name: "DebuggerLogService"): DebuggerLogService
+---@field FindFirstChild fun(self: __MS_game, name: "CustomConfigService"): __MS_game_CustomConfigService
+---@field WaitForChild fun(self: __MS_game, name: "CustomConfigService"): __MS_game_CustomConfigService
+---@field GetService fun(self: __MS_game, name: "CustomConfigService"): __MS_game_CustomConfigService
+---@field FindFirstChild fun(self: __MS_game, name: "AIService"): AIService
+---@field WaitForChild fun(self: __MS_game, name: "AIService"): AIService
+---@field GetService fun(self: __MS_game, name: "AIService"): AIService
+---@field FindFirstChild fun(self: __MS_game, name: "ServerScriptService"): __MS_game_ServerScriptService
+---@field WaitForChild fun(self: __MS_game, name: "ServerScriptService"): __MS_game_ServerScriptService
+---@field GetService fun(self: __MS_game, name: "ServerScriptService"): __MS_game_ServerScriptService
+---@field FindFirstChild fun(self: __MS_game, name: "ServerStorage"): __MS_game_ServerStorage
+---@field WaitForChild fun(self: __MS_game, name: "ServerStorage"): __MS_game_ServerStorage
+---@field GetService fun(self: __MS_game, name: "ServerStorage"): __MS_game_ServerStorage
+---@field FindFirstChild fun(self: __MS_game, name: "SelecterService"): SelecterService
+---@field WaitForChild fun(self: __MS_game, name: "SelecterService"): SelecterService
+---@field GetService fun(self: __MS_game, name: "SelecterService"): SelecterService
+---@field FindFirstChild fun(self: __MS_game, name: "ReplicatorRoot"): __MS_game_ReplicatorRoot
+---@field WaitForChild fun(self: __MS_game, name: "ReplicatorRoot"): __MS_game_ReplicatorRoot
+---@field GetService fun(self: __MS_game, name: "ReplicatorRoot"): __MS_game_ReplicatorRoot
+---@field FindFirstChild fun(self: __MS_game, name: "BlockService"): BlockService
+---@field WaitForChild fun(self: __MS_game, name: "BlockService"): BlockService
+---@field GetService fun(self: __MS_game, name: "BlockService"): BlockService
+---@field FindFirstChild fun(self: __MS_game, name: "NavigationService"): NavigationService
+---@field WaitForChild fun(self: __MS_game, name: "NavigationService"): NavigationService
+---@field GetService fun(self: __MS_game, name: "NavigationService"): NavigationService
+---@field FindFirstChild fun(self: __MS_game, name: "Navigation2DService"): Navigation2DService
+---@field WaitForChild fun(self: __MS_game, name: "Navigation2DService"): Navigation2DService
+---@field GetService fun(self: __MS_game, name: "Navigation2DService"): Navigation2DService
+---@field FindFirstChild fun(self: __MS_game, name: "PluginsService"): __MS_game_PluginsService
+---@field WaitForChild fun(self: __MS_game, name: "PluginsService"): __MS_game_PluginsService
+---@field GetService fun(self: __MS_game, name: "PluginsService"): __MS_game_PluginsService
+---@field FindFirstChild fun(self: __MS_game, name: "WorkSpace"): __MS_game_WorkSpace
+---@field WaitForChild fun(self: __MS_game, name: "WorkSpace"): __MS_game_WorkSpace
+---@field GetService fun(self: __MS_game, name: "WorkSpace"): __MS_game_WorkSpace
+---@field FindFirstChild fun(self: __MS_game, name: "legacyActorRoot"): LegacyActorRoot
+---@field WaitForChild fun(self: __MS_game, name: "legacyActorRoot"): LegacyActorRoot
+---@field GetService fun(self: __MS_game, name: "legacyActorRoot"): LegacyActorRoot
+---@field FindFirstChild fun(self: __MS_game, name: "CombineManegerService"): CombineManeger
+---@field WaitForChild fun(self: __MS_game, name: "CombineManegerService"): CombineManeger
+---@field GetService fun(self: __MS_game, name: "CombineManegerService"): CombineManeger
+---@field FindFirstChild fun(self: __MS_game, name: string): SandboxNode
+---@field WaitForChild fun(self: __MS_game, name: string): SandboxNode
+---@field GetService fun(self: __MS_game, name: string): SandboxNode
+
+---@type __MS_game
+game = {}
