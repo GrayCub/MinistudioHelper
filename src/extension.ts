@@ -23,7 +23,7 @@ import Winreg from "winreg";
 
 const NODE_TREE_VIEW_ID = "ministudiohelper.ministudionodetree";
 const MINISTUDIO_PROCESS_NAME = "miniworldstudio.exe";
-const DOM_DUMP_DEBOUNCE_MS = 250;
+const DOM_DUMP_DEBOUNCE_MS = 50;
 const DOM_DUMP_READ_RETRIES = 3;
 const EMPTY_DOM_NODE: DomNode = { children: [] };
 const SCRIPT_NODE_CLASSES = new Set(["Script", "ModuleScript", "LocalScript"]);
@@ -211,13 +211,16 @@ export async function activate(
 ): Promise<void> {
   // Lua completion must work when MiniStudio is not running.  Node-tree
   // synchronisation below remains optional and only enriches these base types.
+  const workspaceRootPath = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
+  if (workspaceRootPath) {
+    ensureWorkspaceNodeTreeDts(workspaceRootPath);
+  }
+
   try {
     await setupLuaLs(context.extensionPath);
   } catch (e) {
     console.warn("[MinistudioHelper] Lua language-server config failed:", e);
   }
-
-  ensureNodeTreeDts(context.extensionPath);
 
   const environment = await validateEnvironment();
   if (!environment) {
@@ -257,19 +260,20 @@ export async function activate(
     });
     treeView.title = environment.projectName;
 
-    if (activeMap?.root) {
-      try {
-        exportNodeTree(context.extensionPath, activeMap.root);
-      } catch {
-        // non-critical
-      }
+    try {
+      exportNodeTree(
+        workspaceNodeTreePath(environment.workspaceRootPath),
+        activeMap?.root || EMPTY_DOM_NODE,
+      );
+    } catch {
+      // non-critical
     }
 
     const dumpWatcher = new DomDumpWatcher(
       environment.dumpPath,
       provider,
       treeView,
-      context.extensionPath,
+      workspaceNodeTreePath(environment.workspaceRootPath),
     );
     dumpWatcher.start();
 
@@ -285,18 +289,22 @@ export async function activate(
  * Writes node types only when the logical node tree changed. This avoids
  * unnecessary LuaLS re-indexing for repeated dom_dump file events.
  */
-function exportNodeTree(extensionPath: string, rootNode: DomNode): boolean {
+function exportNodeTree(dtsPath: string, rootNode: DomNode): boolean {
   const formattedTree = { game: formatDomNode(rootNode) };
   const json = JSON.stringify(formattedTree, null, 2);
   const embeddedTreeJson = JSON.stringify(formattedTree);
-  const previous = NODE_TREE_EXPORT_CACHE.get(extensionPath);
+  const previous = NODE_TREE_EXPORT_CACHE.get(dtsPath);
   if (previous === json) {
     return false;
   }
 
-  const dts = generateNodeTreeDts(rootNode, embeddedTreeJson);
-  writeNodeTreeDts(extensionPath, undefined, dts);
-  NODE_TREE_EXPORT_CACHE.set(extensionPath, json);
+  const dts = generateNodeTreeDts(
+    rootNode,
+    embeddedTreeJson,
+    Date.now().toString(),
+  );
+  writeNodeTreeDts(dtsPath, undefined, dts);
+  NODE_TREE_EXPORT_CACHE.set(dtsPath, json);
   return true;
 }
 
@@ -312,7 +320,11 @@ function sanitizeClassSegment(name: string): string {
  * Generates a LuaLS .d.lua file that declares `game` and every node path as
  * a typed class, so `game.WorkSpace.MyModel` gets native completion and hover.
  */
-function generateNodeTreeDts(rootNode: DomNode, treeJson?: string): string {
+function generateNodeTreeDts(
+  rootNode: DomNode,
+  treeJson?: string,
+  treeVersion?: string,
+): string {
   const classDefs: string[] = [];
 
   function walk(node: DomNode, path: string[]): string {
@@ -382,6 +394,7 @@ function generateNodeTreeDts(rootNode: DomNode, treeJson?: string): string {
 
   return [
     "---@meta",
+    treeVersion ? `-- __MS_NODE_TREE_VERSION__ ${treeVersion}` : "",
     treeJson ? `-- __MS_NODE_TREE_JSON__ ${treeJson}` : "",
     "",
     ...classDefs,
@@ -392,16 +405,10 @@ function generateNodeTreeDts(rootNode: DomNode, treeJson?: string): string {
 }
 
 function writeNodeTreeDts(
-  extensionPath: string,
+  dtsPath: string,
   rootNode?: DomNode,
   content?: string,
 ): void {
-  const dtsPath = path.join(
-    extensionPath,
-    "luals-addon",
-    "sdk_types",
-    "node_tree.d.lua",
-  );
   fs.mkdirSync(path.dirname(dtsPath), { recursive: true });
   const dtsContent =
     content ||
@@ -411,22 +418,54 @@ function writeNodeTreeDts(
   fs.writeFileSync(dtsPath, dtsContent, "utf8");
 }
 
-/** Preserves the shipped base `game` declaration until a live node tree exists. */
-function ensureNodeTreeDts(extensionPath: string): void {
-  const dtsPath = path.join(
-    extensionPath,
-    "luals-addon",
-    "sdk_types",
-    "node_tree.d.lua",
-  );
-  if (!fs.existsSync(dtsPath)) {
-    writeNodeTreeDts(extensionPath);
+/** Preserves the last live tree, or creates a base declaration on first use. */
+function ensureWorkspaceNodeTreeDts(workspaceRootPath: string): void {
+  const dtsPath = workspaceNodeTreePath(workspaceRootPath);
+  if (fs.existsSync(dtsPath)) {
+    return;
   }
+  const baseDts = "---@meta\n---@type GameNode\ngame = {}\n";
+  writeNodeTreeDts(dtsPath, undefined, baseDts);
+}
+
+function workspaceNodeTreeDirectory(workspaceRootPath: string): string {
+  return path.join(workspaceRootPath, ".ministudio");
+}
+
+function workspaceNodeTreePath(workspaceRootPath: string): string {
+  return path.join(workspaceNodeTreeDirectory(workspaceRootPath), "node_tree.d.lua");
+}
+
+function isManagedSdkPath(value: string): boolean {
+  const normalized = path.normalize(value).toLowerCase();
+  return normalized.endsWith(path.join("luals-addon", "sdk_types").toLowerCase());
+}
+
+function managedLibraryPaths(
+  current: string[],
+  sdkPath: string,
+  generatedLibraryPath: string | undefined,
+): string[] {
+  const result = current.filter((entry) => !isManagedSdkPath(entry));
+  result.push(sdkPath);
+  if (generatedLibraryPath && !result.includes(generatedLibraryPath)) {
+    result.push(generatedLibraryPath);
+  }
+  return result;
+}
+
+function sameStringArray(left: string[], right: string[]): boolean {
+  return left.length === right.length
+    && left.every((value, index) => value === right[index]);
 }
 
 async function setupLuaLs(extensionPath: string) {
   const addonPath = path.join(extensionPath, "luals-addon");
   const sdkPath = path.join(addonPath, "sdk_types");
+  const workspaceRootPath = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
+  const generatedLibraryPath = workspaceRootPath
+    ? workspaceNodeTreeDirectory(workspaceRootPath)
+    : undefined;
   const pluginPath = path.join(addonPath, "plugin.lua");
 
   // 判断当前是否有打开的工作区
@@ -456,10 +495,15 @@ async function setupLuaLs(extensionPath: string) {
     }
 
     const library: string[] = luaConfig.get<string[]>("workspace.library") || [];
-    if (!library.includes(sdkPath)) {
+    const desiredLibrary = managedLibraryPaths(
+      library,
+      sdkPath,
+      generatedLibraryPath,
+    );
+    if (!sameStringArray(desiredLibrary, library)) {
       await luaConfig.update(
         "workspace.library",
-        [...library, sdkPath],
+        desiredLibrary,
         targetScope,
       );
     }
@@ -481,10 +525,15 @@ async function setupLuaLs(extensionPath: string) {
 
     const library: string[] =
       miniStudioConfig.get<string[]>("workspace.library") || [];
-    if (!library.includes(sdkPath)) {
+    const desiredLibrary = managedLibraryPaths(
+      library,
+      sdkPath,
+      generatedLibraryPath,
+    );
+    if (!sameStringArray(desiredLibrary, library)) {
       await miniStudioConfig.update(
         "workspace.library",
-        [...library, sdkPath],
+        desiredLibrary,
         targetScope,
       );
     }
@@ -565,10 +614,12 @@ class DomDumpWatcher implements vscode.Disposable {
     private readonly dumpPath: string,
     private readonly provider: MiniStudioNodeTreeProvider,
     private readonly treeView: vscode.TreeView<MiniStudioTreeItem>,
-	private readonly extensionPath: string,
+    private readonly nodeTreePath: string,
   ) {}
 
   public start(): void {
+    // Watch the containing directory so atomic replacement of dom_dump.json
+    // also produces an event on Windows.
     try {
       const directory = path.dirname(this.dumpPath);
       const fileName = path.basename(this.dumpPath).toLowerCase();
@@ -582,7 +633,10 @@ class DomDumpWatcher implements vscode.Disposable {
           this.scheduleReload();
         },
       );
-      this.directoryWatcher.on("error", () => undefined);
+      this.directoryWatcher.on("error", () => {
+        this.directoryWatcher?.close();
+        this.directoryWatcher = undefined;
+      });
     } catch {
       // Tree updates are supplementary and must not affect the language server.
     }
@@ -625,11 +679,8 @@ class DomDumpWatcher implements vscode.Disposable {
         ? loaded.dump.maps?.[activeMapId]
         : undefined;
 
-      const nodeTreeChanged = activeMap?.root
-        ? exportNodeTree(this.extensionPath, activeMap.root)
-        : true;
-
       const rootNode = activeMap?.root || EMPTY_DOM_NODE;
+      const nodeTreeChanged = exportNodeTree(this.nodeTreePath, rootNode);
 
       if (nodeTreeChanged) {
         this.provider.updateRoot(rootNode);

@@ -282,6 +282,15 @@ local function script_info(uri)
     end
     if not start then return nil end
 
+    local file_value = uri_to_file_path(uri):gsub("\\", "/")
+    local file_lower = file_value:lower()
+    local file_marker = "/data/scriptfiles/game/"
+    local file_start = file_lower:find(file_marker, 1, true)
+    if not file_start then
+        file_marker = "/scriptfiles/game/"
+        file_start = file_lower:find(file_marker, 1, true)
+    end
+
     local relative = value:sub(start + #marker)
     if relative:lower():sub(-4) == ".lua" then
         relative = relative:sub(1, -5)
@@ -296,6 +305,7 @@ local function script_info(uri)
     return {
         chain = chain,
         root_prefix = value:sub(1, start + #marker - 1),
+        workspace_root = file_start and file_value:sub(1, file_start - 1) or nil,
     }
 end
 
@@ -351,6 +361,11 @@ end
 function M.script_chain(uri)
     local info = script_info(uri)
     return info and info.chain or nil
+end
+
+function M.workspace_root(uri)
+    local info = script_info(uri)
+    return info and info.workspace_root or nil
 end
 
 return M

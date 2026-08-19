@@ -22,7 +22,7 @@ local current_file = debug.getinfo(1, "S").source:sub(2)
 local current_dir = current_file:match("(.*[/\\\\])") or ""
 local node_tree_dts_path = current_dir .. "sdk_types/node_tree.d.lua"
 
-local tree_cache = nil
+local tree_cache = {}
 local node_cache = {}
 local SCRIPT_TYPES = {
     Script = true,
@@ -30,31 +30,61 @@ local SCRIPT_TYPES = {
     ModuleScript = true,
 }
 
-local function get_tree_data()
-    if tree_cache then return tree_cache end
-    local f = io.open(node_tree_dts_path, "r")
-    if not f then return tree_cache end
+local function get_tree_data(uri)
+    local tree_path = node_tree_dts_path
+    local workspace_root = node_require.workspace_root(uri)
+    if workspace_root then
+        tree_path = workspace_root .. "/.ministudio/node_tree.d.lua"
+    end
+    local f = io.open(tree_path, "r")
+    if not f then
+        return nil, nil
+    end
 
-    local content = f:read("*a")
+    f:read("*l")
+    local marker = f:read("*l") or ""
+    local version = marker:match("^%-%- __MS_NODE_TREE_VERSION__ (.+)$")
+    local cached = tree_cache[tree_path]
+    if version and cached and cached.version == version then
+        f:close()
+        return cached.data, version
+    end
+
+    local encoded
+    if version then
+        local json_marker = f:read("*l") or ""
+        encoded = json_marker:match("^%-%- __MS_NODE_TREE_JSON__ ([^\r\n]+)")
+    else
+        local content = marker .. "\n" .. f:read("*a")
+        encoded = content:match("%-%- __MS_NODE_TREE_JSON__ ([^\r\n]+)")
+    end
     f:close()
-
-    local encoded = content:match("%-%- __MS_NODE_TREE_JSON__ ([^\r\n]+)")
-    if not encoded then return tree_cache end
+    if not encoded then
+        tree_cache[tree_path] = { version = version, data = false }
+        return nil, version
+    end
 
     local ok, res = pcall(json.decode, encoded)
-    if ok and type(res) == "table" then
-        tree_cache = res
+    if not cached or cached.version ~= version then
+        node_cache = {}
     end
-    return tree_cache
+    if ok and type(res) == "table" then
+        tree_cache[tree_path] = { version = version, data = res }
+    else
+        tree_cache[tree_path] = { version = version, data = false }
+    end
+    return tree_cache[tree_path].data or nil, version
 end
 
-local function resolve_node(chain)
-    local cache_key = table.concat(chain, "\31")
+local function resolve_node(uri, chain)
+    local workspace_root = node_require.workspace_root(uri) or node_tree_dts_path
+    local data, version = get_tree_data(uri)
+    local cache_key = workspace_root .. "\30" .. tostring(version)
+        .. "\30" .. table.concat(chain, "\31")
     local cached = node_cache[cache_key]
     if cached ~= nil then
         return cached or nil
     end
-    local data = get_tree_data()
     if not data then
         node_cache[cache_key] = false
         return nil
@@ -109,7 +139,7 @@ local function resolve_node_require(uri, require_path)
         return resolved
     end
 
-    local node = resolve_node(chain)
+    local node = resolve_node(uri, chain)
     if not node or not SCRIPT_TYPES[node.__type] then
         return nil
     end
