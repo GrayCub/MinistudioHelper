@@ -14,6 +14,7 @@
 ---@field EventNotify SBXSignal @当动画状态机状态发生变化时触发的通知事件，用于响应状态进入、退出、更新等状态机消息
 ---@field GetAnimationPostNotify SBXSignal @当动画姿态计算完成时触发的通知事件，用于响应动画每一帧的姿态更新完成
 ---@field UpdateAssetNotify SBXSignal @当动画资源更新时触发的通知事件，用于响应动画切片资源的加载或更新状态
+---@field ClipsEventNotify SBXSignal @当动画切片触发事件时发送的通知，用于响应动画切片中定义的事件回调
 local Animator = {}
 
 --- 清空所有持有的动画资源，包括动画控制器和骨骼资源，并停止所有动画播放

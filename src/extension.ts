@@ -209,27 +209,27 @@ interface ValidatedEnvironment {
 export async function activate(
   context: vscode.ExtensionContext,
 ): Promise<void> {
-  // Lua completion must work when MiniStudio is not running.  Node-tree
-  // synchronisation below remains optional and only enriches these base types.
+  // 如果打开了工作区，确保NodeTree补全文件存在
   const workspaceRootPath = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
   if (workspaceRootPath) {
     ensureWorkspaceNodeTreeDts(workspaceRootPath);
   }
 
+  // 配置LuaLS
   try {
     await setupLuaLs(context.extensionPath);
   } catch (e) {
     console.warn("[MinistudioHelper] Lua language-server config failed:", e);
   }
-
+  // 检查环境
   const environment = await validateEnvironment();
   if (!environment) {
     return;
   }
-
+  // 折叠资源管理器展开的文件夹
   collapseExplorerFolders();
 
-  // Register commands FIRST so they are always available even if tree setup fails.
+  // 注册命令
   context.subscriptions.push(
     vscode.commands.registerCommand(
       "ministudiohelper.copyNodeName",
@@ -245,21 +245,21 @@ export async function activate(
     ),
   );
 
-  // Once the required checks pass, a tree rendering error must not stop LSP.
   try {
+    // 创建节点树提供者
     const activeMap = environment.dump.maps?.[environment.activeMapId];
     const provider = new MiniStudioNodeTreeProvider(
       activeMap?.root || EMPTY_DOM_NODE,
       context.extensionPath,
       path.join(environment.workspaceRootPath, "data", "scriptFiles", "game"),
     );
-
+    // 创建侧边栏视图，并设置标题
     const treeView = vscode.window.createTreeView(NODE_TREE_VIEW_ID, {
       treeDataProvider: provider,
       showCollapseAll: true,
     });
     treeView.title = environment.projectName;
-
+    // 把当前地图的节点树结构转换为 Lua 智能提示类型文件
     try {
       exportNodeTree(
         workspaceNodeTreePath(environment.workspaceRootPath),
@@ -269,6 +269,7 @@ export async function activate(
       // non-critical
     }
 
+    // 启动文件监视器
     const dumpWatcher = new DomDumpWatcher(
       environment.dumpPath,
       provider,
@@ -276,7 +277,8 @@ export async function activate(
       workspaceNodeTreePath(environment.workspaceRootPath),
     );
     dumpWatcher.start();
-
+    // 将数据提供者、文件监视器、树视图放入context.subscriptions
+    // 插件禁用或结束时，清理context.subscriptions中的对象
     context.subscriptions.push(provider, treeView, dumpWatcher);
   } catch (e) {
     void vscode.window.showErrorMessage(
@@ -285,10 +287,7 @@ export async function activate(
   }
 }
 
-/**
- * Writes node types only when the logical node tree changed. This avoids
- * unnecessary LuaLS re-indexing for repeated dom_dump file events.
- */
+// 导出节点树
 function exportNodeTree(dtsPath: string, rootNode: DomNode): boolean {
   const formattedTree = { game: formatDomNode(rootNode) };
   const json = JSON.stringify(formattedTree, null, 2);
@@ -316,10 +315,8 @@ function sanitizeClassSegment(name: string): string {
   return name.replace(/[^a-zA-Z0-9_]/g, "_");
 }
 
-/**
- * Generates a LuaLS .d.lua file that declares `game` and every node path as
- * a typed class, so `game.WorkSpace.MyModel` gets native completion and hover.
- */
+// 生成LuaLS.d.lua文件，使`game.WorkSpace.MyModel`等获得语法提示
+// 这是整个插件的核心
 function generateNodeTreeDts(
   rootNode: DomNode,
   treeJson?: string,
@@ -404,6 +401,8 @@ function generateNodeTreeDts(
   ].join("\n");
 }
 
+// 同步写入工作区提示文件(节点树文件)
+// content没有的话则自动生成
 function writeNodeTreeDts(
   dtsPath: string,
   rootNode?: DomNode,
@@ -418,7 +417,7 @@ function writeNodeTreeDts(
   fs.writeFileSync(dtsPath, dtsContent, "utf8");
 }
 
-/** Preserves the last live tree, or creates a base declaration on first use. */
+// 确保工作区提示文件(节点树文件)存在
 function ensureWorkspaceNodeTreeDts(workspaceRootPath: string): void {
   const dtsPath = workspaceNodeTreePath(workspaceRootPath);
   if (fs.existsSync(dtsPath)) {
@@ -428,10 +427,12 @@ function ensureWorkspaceNodeTreeDts(workspaceRootPath: string): void {
   writeNodeTreeDts(dtsPath, undefined, baseDts);
 }
 
+// 获取工作区提示文件(节点树文件)->目录
 function workspaceNodeTreeDirectory(workspaceRootPath: string): string {
   return path.join(workspaceRootPath, ".ministudio");
 }
 
+// 获取工作区提示文件(节点树文件)->路径
 function workspaceNodeTreePath(workspaceRootPath: string): string {
   return path.join(workspaceNodeTreeDirectory(workspaceRootPath), "node_tree.d.lua");
 }
@@ -459,7 +460,9 @@ function sameStringArray(left: string[], right: string[]): boolean {
     && left.every((value, index) => value === right[index]);
 }
 
+// 配置LuaLS
 async function setupLuaLs(extensionPath: string) {
+  // 获取各种各样的路径
   const addonPath = path.join(extensionPath, "luals-addon");
   const sdkPath = path.join(addonPath, "sdk_types");
   const workspaceRootPath = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
@@ -472,18 +475,22 @@ async function setupLuaLs(extensionPath: string) {
   const hasWorkspace =
     vscode.workspace.workspaceFolders &&
     vscode.workspace.workspaceFolders.length > 0;
+  // 打开工作区就是工作区配置，没打开就是全局配置
   const targetScope = hasWorkspace
     ? vscode.ConfigurationTarget.Workspace
     : vscode.ConfigurationTarget.Global;
 
   try {
+    // 获取lua插件配置对象
     const luaConfig = vscode.workspace.getConfiguration("Lua");
-
+    // 获取当前运行插件路径
     const currentPlugin = luaConfig.get<string>("runtime.plugin");
+    // 如果当前运行插件跟脚本插件路径不同，则更新路径
     if (currentPlugin !== pluginPath) {
       await luaConfig.update("runtime.plugin", pluginPath, targetScope);
     }
-
+    // 检查并确保插件自带的扩展目录（addonPath）已经被加入到 Lua 语言服务的第三方库白名单（workspace.userThirdParty）中
+    // 如果没有，就自动把它添加进去
     const userThirdParty: string[] =
       luaConfig.get<string[]>("workspace.userThirdParty") || [];
     if (!userThirdParty.includes(addonPath)) {
@@ -493,7 +500,8 @@ async function setupLuaLs(extensionPath: string) {
         vscode.ConfigurationTarget.Global,
       );
     }
-
+    // 检查并更新 Lua 语言服务的项目库路径（workspace.library）
+    // 确保游戏官方的 SDK 类型和动态生成的节点树路径被正确加载到编辑器的索引中
     const library: string[] = luaConfig.get<string[]>("workspace.library") || [];
     const desiredLibrary = managedLibraryPaths(
       library,
@@ -512,6 +520,7 @@ async function setupLuaLs(extensionPath: string) {
   }
 
   try {
+    // ministudiohelper插件配置，与上面的LuaLS配置逻辑一致，双重保险
     const miniStudioConfig = vscode.workspace.getConfiguration("ministudiohelper");
 
     const currentPlugin = miniStudioConfig.get<string>("runtime.plugin");
@@ -542,6 +551,7 @@ async function setupLuaLs(extensionPath: string) {
   }
 }
 
+// 环境检查
 async function validateEnvironment(): Promise<
   ValidatedEnvironment | undefined
 > {
@@ -806,6 +816,8 @@ async function openScript(context?: ScriptOpenContext): Promise<void> {
   }
 }
 
+// 折叠资源管理器文件夹
+// 失败则跳过
 function collapseExplorerFolders(): void {
   void vscode.commands
     .executeCommand("workbench.files.action.collapseExplorerFolders")

@@ -15,12 +15,12 @@
 ---@field ModalEnabled boolean @切换迷你世界Studio的移动控制是否在移动设备上隐藏
 ---@field MouseDeltaSensitivity number @缩放用户的Mouse的Delta（位置改变）输出
 ---@field MouseBehavior MouseBehavior @用户的鼠标可以自由移动或是被锁定
----@field InputBegan SandboxNode @开始输入
----@field InputChanged SandboxNode @输入改变
----@field InputEnded SandboxNode @输入结束
----@field TouchStarted SandboxNode @触摸开始
----@field TouchMoved SandboxNode @触摸移动
----@field TouchEnded SandboxNode @触摸结束
+---@field InputBegan SBXSignal @开始输入
+---@field InputChanged SBXSignal @输入改变
+---@field InputEnded SBXSignal @输入结束
+---@field TouchStarted SBXSignal @触摸开始
+---@field TouchMoved SBXSignal @触摸移动
+---@field TouchEnded SBXSignal @触摸结束
 local UserInputService = {}
 
 --- 从给定的obj列表中，根据传入的2D屏幕坐标，拾取指定对象

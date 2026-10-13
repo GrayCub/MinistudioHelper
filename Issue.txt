@@ -1,0 +1,10 @@
+1. animator.ClipsEventNotify，ClipsEventNotify官方文档没显示，但实际是有的，应该加入.d.lua（已解决）
+2. UserInputService里的TouchStarted、InputChanged等不是信号类型，官方文档搞错，应该改成SBXSignal（已解决）
+3. 事件要跟函数区分开，事件作为信号单独处理，Connect里面的回调函数应该有参数类型提示
+4. WorkSpace的CurrentCamera应该返回Camera类型的，但是官方文档写错写成SandboxNode（已解决）
+5. local a = script.Parent推不出Parent是什么类型
+6. local MainStorage = game:GetService("MainStorage")
+local MS = require(game.MainStorage.Common:WaitForChild("Global"))
+G.MS = MS
+
+这个场景下MainStorage仍然提示"未使用的局部变量 `MainStorage`"（已解决）
