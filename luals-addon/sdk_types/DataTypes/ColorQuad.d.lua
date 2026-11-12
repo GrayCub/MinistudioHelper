@@ -14,3 +14,10 @@ ColorQuad = {}
 ---@return ColorQuad
 function ColorQuad.New(R, G, B, A) end
 
+---@param R number
+---@param G number
+---@param B number
+---@param A number
+---@return ColorQuad
+function ColorQuad.new(R, G, B, A) end
+

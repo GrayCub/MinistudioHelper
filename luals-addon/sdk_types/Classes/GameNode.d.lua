@@ -1,13 +1,11 @@
 ---@meta
 
---- @see https://studio.mini1.cn/wiki/Api/Classes/Service/GameNode.html
 ---@class GameNode : SandboxNode
----@field Name string @服务名
----@field Loaded SandboxNode @加载完的服务
+---@field Name string 服务名
+---@field Loaded SandboxNode 加载完的服务
 local GameNode = {}
 
 --- 通过名称获取该服务节点
---- @see https://studio.mini1.cn/wiki/Api/Classes/Service/GameNode.html
 ---@overload fun(name: "ContextActionService"): ContextActionService
 ---@overload fun(name: "UserInputService"): UserInputService
 ---@overload fun(name: "GameSetting"): GameSetting
@@ -53,12 +51,10 @@ local GameNode = {}
 function GameNode:GetService(name) end
 
 --- 关闭绑定
---- @see https://studio.mini1.cn/wiki/Api/Classes/Service/GameNode.html
 ---@param luaf function
 function GameNode:BindToClose(luaf) end
 
 --- 通过sceneid获取workspace
---- @see https://studio.mini1.cn/wiki/Api/Classes/Service/GameNode.html
 ---@param sceneid unsignedshort
 ---@return WorkSpace
 function GameNode:GetWorkSpace(sceneid) end

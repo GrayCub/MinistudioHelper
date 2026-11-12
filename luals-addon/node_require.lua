@@ -118,11 +118,7 @@ local function expand_alias(parts, aliases)
     return result
 end
 
--- Convert a node expression into the same dotted path consumed by resolve().
--- Supported forms can be mixed freely:
--- game.MainStorage.Common.Global
--- game:GetService("MainStorage"):WaitForChild("Common").Global
--- MainStorage.Common:FindFirstChild("Global")
+-- 转换节点表达式
 function M.normalize_expression(expression, aliases)
     if type(expression) ~= "string" then return nil end
     local position = skip_space(expression, 1)
@@ -155,21 +151,32 @@ function M.normalize_expression(expression, aliases)
             position = skip_space(expression, position + 1)
             local method
             method, position = read_identifier(expression, position)
-            if method ~= "GetService"
-            and method ~= "WaitForChild"
-            and method ~= "FindFirstChild" then
-                return nil
+            if not method then return nil end
+
+            position = skip_space(expression, position)
+            if expression:sub(position, position) == "(" then
+                position = skip_space(expression, position + 1)
+                -- 检查括号内是否有字符串参数（如 GetService("Players") / WaitForChild("PlayerGui")）
+                local field, next_pos = read_string(expression, position)
+                if field then
+                    position = skip_space(expression, next_pos)
+                    if expression:sub(position, position) == ")" then
+                        position = position + 1
+                        parts[#parts + 1] = field
+                    else
+                        -- 如果有括号但不是纯字符串参数（例如传了其他变量），可选择跳过或作为方法名本身
+                        local close_paren = expression:find(")", position, true)
+                        if close_paren then position = close_paren + 1 end
+                    end
+                else
+                    -- 无参数或空括号的方法调用，直接跳过括号
+                    local close_paren = expression:find(")", position, true)
+                    if close_paren then position = close_paren + 1 end
+                end
+            else
+                -- 如果只是单纯的冒号但没有括号，记录方法名
+                parts[#parts + 1] = method
             end
-            position = skip_space(expression, position)
-            if expression:sub(position, position) ~= "(" then return nil end
-            position = skip_space(expression, position + 1)
-            local field
-            field, position = read_string(expression, position)
-            if not field then return nil end
-            position = skip_space(expression, position)
-            if expression:sub(position, position) ~= ")" then return nil end
-            position = position + 1
-            parts[#parts + 1] = field
         else
             return nil
         end
@@ -309,8 +316,7 @@ local function script_info(uri)
     }
 end
 
--- Resolve script-relative paths against the current script node. Script
--- children live in the directory named after their owning script.
+-- 解析脚本路径
 function M.chain(uri, name)
     local parts = split_path(name)
     if #parts == 0 then return nil end

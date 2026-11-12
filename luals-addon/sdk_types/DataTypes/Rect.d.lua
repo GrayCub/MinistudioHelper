@@ -14,3 +14,10 @@ Rect = {}
 ---@return Rect
 function Rect.New(left, top, right, bottom) end
 
+---@param left number
+---@param top number
+---@param right number
+---@param bottom number
+---@return Rect
+function Rect.new(left, top, right, bottom) end
+

@@ -1,13 +1,26 @@
 ---@meta
 
---- @see https://studio.mini1.cn/wiki/Api/Classes/GamePlay/TeleportService.html
+---@class FTeleportServiceTeleportSuccessEvent : SBXSignal
+FTeleportServiceTeleportSuccessEvent = {}
+
+---@param callback fun(): nil
+---@return SBXConnection
+function FTeleportServiceTeleportSuccessEvent:Connect(callback) end
+
+---@class FTeleportServiceTeleportFailEvent : SBXSignal
+FTeleportServiceTeleportFailEvent = {}
+
+---@param callback fun(): nil
+---@return SBXConnection
+function FTeleportServiceTeleportFailEvent:Connect(callback) end
+
+
 ---@class TeleportService : SandboxNode
----@field TeleportSuccess SBXSignal @玩家传送成功触发，会触发一个TeleportSuccess通知
----@field TeleportFail SBXSignal @玩家传送失败，会触发一个TeleportFail通知
+---@field TeleportSuccess FTeleportServiceTeleportSuccessEvent <Assignable> 玩家传送成功触发，会触发一个TeleportSuccess通知
+---@field TeleportFail FTeleportServiceTeleportFailEvent <Assignable> 玩家传送失败，会触发一个TeleportFail通知
 local TeleportService = {}
 
 --- 地图内将玩家传送到指定位置
---- @see https://studio.mini1.cn/wiki/Api/Classes/GamePlay/TeleportService.html
 ---@param playernode SandboxNode
 ---@param pos Vector3
 function TeleportService:Teleport(playernode, pos) end

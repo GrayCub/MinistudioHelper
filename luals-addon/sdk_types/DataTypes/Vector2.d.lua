@@ -11,3 +11,8 @@ Vector2 = {}
 ---@return Vector2
 function Vector2.New(x, y) end
 
+---@param x number
+---@param y number
+---@return Vector2
+function Vector2.new(x, y) end
+

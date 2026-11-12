@@ -12,6 +12,12 @@ Vector3 = {}
 ---@return Vector3
 function Vector3.New(x, y, z) end
 
+---@param x number
+---@param y number
+---@param z number
+---@return Vector3
+function Vector3.new(x, y, z) end
+
 ---@param Vector3ToNormalize Vector3
 function Vector3:Normalize(Vector3ToNormalize) end
 

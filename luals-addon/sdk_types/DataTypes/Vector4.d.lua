@@ -15,3 +15,10 @@ Vector4 = {}
 ---@return Vector4
 function Vector4.New(x, y, z, w) end
 
+---@param x number
+---@param y number
+---@param z number
+---@param w number
+---@return Vector4
+function Vector4.new(x, y, z, w) end
+

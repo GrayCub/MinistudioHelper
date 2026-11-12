@@ -14,3 +14,10 @@ ColorValue = {}
 ---@return ColorQuad
 function ColorValue.New(R, G, B, A) end
 
+---@param R float
+---@param G float
+---@param B float
+---@param A float
+---@return ColorQuad
+function ColorValue.new(R, G, B, A) end
+

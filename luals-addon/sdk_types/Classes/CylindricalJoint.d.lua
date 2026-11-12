@@ -1,6 +1,5 @@
 ---@meta
 
---- @see https://studio.mini1.cn/wiki/Api/Classes/Other/CylindricalJoint.html
 ---@class CylindricalJoint : SandboxNode
 ---@field LinearLimitsEnable boolean
 ---@field LinearLowerlimit number

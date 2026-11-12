@@ -315,6 +315,47 @@ function sanitizeClassSegment(name: string): string {
   return name.replace(/[^a-zA-Z0-9_]/g, "_");
 }
 
+function withRuntimeVirtualNodes(root: DomNode): DomNode {
+  const children = Array.isArray(root.children) ? root.children : [];
+  const byName = new Map<string, DomNode>();
+  for (const child of children) {
+    if (child.name && !byName.has(child.name)) byName.set(child.name, child);
+  }
+
+  const players = byName.get("Players");
+  const playerChildren = players && Array.isArray(players.children)
+    ? players.children : [];
+  if (playerChildren.some((c) => c.name === "LocalPlayer")) return root;
+
+  const starterGui = byName.get("StarterGui");
+  const guiChildren = starterGui && Array.isArray(starterGui.children)
+    ? starterGui.children : [];
+
+  const virtualPlayers: DomNode = {
+    name: "Players",
+    className: "Players",
+    ...(players ?? {}),
+    children: [
+      ...playerChildren,
+      {
+        name: "LocalPlayer",
+        className: "Player",
+        children: [{
+          name: "PlayerGui",
+          className: "PlayerGui",
+          children: guiChildren,
+        }],
+      },
+    ],
+  };
+
+  if (!players) return { ...root, children: [...children, virtualPlayers] };
+  return {
+    ...root,
+    children: children.map((c) => (c === players ? virtualPlayers : c)),
+  };
+}
+
 // 生成LuaLS.d.lua文件，使`game.WorkSpace.MyModel`等获得语法提示
 // 这是整个插件的核心
 function generateNodeTreeDts(
@@ -330,12 +371,12 @@ function generateNodeTreeDts(
       : [];
     const baseType = node.className || "SandboxNode";
 
-    if (children.length === 0) {
-      return baseType;
-    }
-
     const className = `__MS_${path.map(sanitizeClassSegment).join("_")}`;
     const fields: string[] = [];
+
+    // 添加动态索引签名，允许访问任意未显式声明的子节点或属性（消除黄色警报）
+    fields.push(`---@field [string] any`);
+
     const childTypes: Array<{ name: string; type: string }> = [];
 
     for (const child of children) {
@@ -347,8 +388,19 @@ function generateNodeTreeDts(
       childTypes.push({ name: child.name, type: childType });
     }
 
-    // Refine child lookup calls for the live node tree while retaining the
-    // SandboxNode fallback for names that are not currently known.
+    // LuaLS 只有在「参数类型本身」里看到字符串字面量时，才会在引号内
+    // （GetService("|") / WaitForChild('|')）给出候选。仅靠多个 ---@field
+    // 精准重载，只会在引号前弹 EnumMember，引号内反而一个候选都没有。
+    // 所以兜底签名用「所有子节点名字面量联合 | string」：
+    //   - 字面量联合 -> 引号内有候选
+    //   - |string    -> 传任意节点名不会被判类型不匹配
+    // 精准重载仍然保留，按名字返回 __MS_ 类型的能力不受影响。
+    const literalNames = childTypes.map((child) => JSON.stringify(child.name));
+    const nameUnion = literalNames.length > 0
+      ? `${literalNames.join("|")}|string`
+      : "string";
+
+    // 为具体的子节点生成精准返回类型的重载方法
     for (const child of childTypes) {
       const name = JSON.stringify(child.name);
       fields.push(
@@ -358,9 +410,6 @@ function generateNodeTreeDts(
         `---@field WaitForChild fun(self: ${className}, name: ${name}): ${child.type}`,
       );
 
-      // LuaLS does not reliably resolve overloaded inherited methods on the
-      // generated root node. Add concrete service signatures directly to
-      // __MS_game so game:GetService("RunService") keeps its class type.
       const isServiceNode = path.length === 1;
       if (isServiceNode) {
         fields.push(
@@ -368,15 +417,20 @@ function generateNodeTreeDts(
         );
       }
     }
+
+    // 添加通用的兜底方法签名（参数带字面量联合，供引号内补全使用）
     fields.push(
-      `---@field FindFirstChild fun(self: ${className}, name: string): SandboxNode`,
+      `---@field FindFirstChild fun(self: ${className}, name: ${nameUnion}): SandboxNode`,
     );
     fields.push(
-      `---@field WaitForChild fun(self: ${className}, name: string): SandboxNode`,
+      `---@field WaitForChild fun(self: ${className}, name: ${nameUnion}): SandboxNode`,
+    );
+    fields.push(
+      `---@field GetChildren fun(self: ${className}): SandboxNode[]`,
     );
     if (path.length === 1) {
       fields.push(
-        `---@field GetService fun(self: ${className}, name: string): SandboxNode`,
+        `---@field GetService fun(self: ${className}, name: ${nameUnion}): SandboxNode`,
       );
     }
 
@@ -387,7 +441,7 @@ function generateNodeTreeDts(
     return className;
   }
 
-  const rootType = walk(rootNode, ["game"]);
+  const rootType = walk(withRuntimeVirtualNodes(rootNode), ["game"]);
 
   return [
     "---@meta",

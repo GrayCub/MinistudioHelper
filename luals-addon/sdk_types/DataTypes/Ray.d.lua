@@ -13,6 +13,11 @@ Ray = {}
 ---@return Ray
 function Ray.New(origin, direct) end
 
+---@param origin Vector3
+---@param direction Vector3
+---@return Ray
+function Ray.new(origin, direct) end
+
 ---@param ray Ray
 ---@param point Vector3
 ---@return Vector3

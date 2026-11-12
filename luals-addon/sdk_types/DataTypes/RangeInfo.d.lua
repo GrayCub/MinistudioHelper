@@ -10,3 +10,8 @@ RangeInfo = {}
 ---@return RangeInfo
 function RangeInfo.New(min, max) end
 
+---@param min number
+---@param max number
+---@return RangeInfo
+function RangeInfo.new(min, max) end
+
