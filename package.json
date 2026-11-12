@@ -14,7 +14,7 @@
     "IntelliSense",
     "Ministudio"
   ],
-  "version": "1.0.2",
+  "version": "1.1.2",
   "engines": {
     "vscode": "^1.125.0"
   },
